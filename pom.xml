@@ -1,9 +1,232 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>edu.uci.ics.luci.p2p4android</groupId>
-  <artifactId>p2p4android</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>p2p4android</name>
-  <description>An independent port of the JXTA v2.7 peer-to-peer communication library for use on the Android platform. Developed by the LUCI lab at the University of California, Irvine. 
-http://luci.ics.uci.edu</description>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.uci.ics.luci.p2p4android</groupId>
+	<artifactId>p2p4android</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>p2p4android</name>
+
+    <organization>
+        <name>p2p4android</name>
+        <url>http://luci.ics.uci.edu/</url>
+    </organization>
+
+	<description>An independent port of the JXTA v2.7 peer-to-peer communication library for use on the Android platform. Developed by the LUCI lab at the University of California, Irvine. 
+http://luci.ics.uci.edu
+	</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <!-- Repository needed to include the jboss netty library -->
+            <id>repository.jboss.org</id>
+            <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>mvn2</id>
+            <url>http://repo2.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>repository.httptunnel</id>
+            <url>https://bitbucket.org/iainmcgin/netty-httptunnel/raw/tip/repo</url>
+        </repository>
+    </repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+
+            <!-- Making our jar an OSGi bundle too by adding info in the MANIFEST -->
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.0.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.groupId}</Bundle-SymbolicName>
+                        <Bundle-DocURL>${project.url}</Bundle-DocURL>
+                        <Eclipse-BuddyPolicy>registered</Eclipse-BuddyPolicy>
+                        <!-- Needs a bit more thought before enabling
+                        <Bundle-Activator>
+                            net.jxse.OSGi.Services.JxseOSGiNetworkManagerService
+                        </Bundle-Activator>
+                        -->
+                        <Export-Package>
+                            edu.uci.ics.luci.p2p4androidprotocol.*;version=${project.version},
+                            edu.uci.ics.luci.p2p4androidjava.*;version=${project.version},
+                        </Export-Package>
+                        <Private-Package>
+                            ${project.groupId}.example.*,
+                            ${project.groupId}.util.internal.*,
+                        </Private-Package>
+                        <Import-Package>
+                            *;resolution:=optional
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+            <!-- Configuring JUnits / Surefire -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <forkMode>pertest</forkMode>
+
+                    <!-- Don't remove skip, it is sometimes necessary to
+                      disactivate tests for the Sonatype OSS release. -->
+                    <skip>true</skip>
+
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <passphrase />
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+	<dependencies>
+
+        <dependency>
+            <groupId>bouncycastle</groupId>
+            <artifactId>bcprov-jdk15</artifactId>
+            <version>140</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.main</artifactId>
+            <version>2.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--
+              The following dependencies are not always needed in normal p2p4android use,
+              so they are flagged as "optional". Include it manually in your
+              project's pom.xml if you want to use the parts of p2p4android that depend on
+              them.
+          -->
+        <dependency>
+            <groupId>jetty</groupId>
+            <artifactId>org.mortbay.jetty</artifactId>
+            <version>4.2.25</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.netty</groupId>
+            <artifactId>netty</artifactId>
+            <version>3.2.2.Final</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.netty</groupId>
+            <artifactId>httptunnel</artifactId>
+            <version>0.92</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <version>10.5.3.0_1</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.1.118</version>
+            <optional>true</optional>
+        </dependency>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-junit4</artifactId>
+            <version>2.5.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-legacy</artifactId>
+            <version>2.5.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+	<reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.4.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+	<!-- There are no profiles because djp3 has no idea what they are -->
+
 </project>
