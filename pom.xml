@@ -1,0 +1,9 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.uci.ics.luci.p2p4android</groupId>
+  <artifactId>p2p4android</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>p2p4android</name>
+  <description>An independent port of the JXTA v2.7 peer-to-peer communication library for use on the Android platform. Developed by the LUCI lab at the University of California, Irvine. 
+http://luci.ics.uci.edu</description>
+</project>
