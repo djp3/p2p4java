@@ -63,15 +63,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import net.jxta.id.IDFactory;
-import net.jxta.impl.util.threads.TaskManager;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroup;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jmock.Expectations;
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
+
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.cm.XIndiceSrdi;
+import edu.uci.ics.luci.p2p4java.impl.util.threads.TaskManager;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
 
 /**
  * This class was formerly known as SrdiIndexTest. It contains a number

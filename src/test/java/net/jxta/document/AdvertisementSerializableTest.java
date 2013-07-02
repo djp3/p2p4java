@@ -12,16 +12,23 @@ import java.util.Hashtable;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import net.jxta.id.ID;
-import net.jxta.id.IDFactory;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.pipe.PipeID;
-import net.jxta.pipe.PipeService;
-import net.jxta.platform.ModuleSpecID;
-import net.jxta.protocol.PeerAdvertisement;
-import net.jxta.protocol.PeerGroupAdvertisement;
-import net.jxta.protocol.PipeAdvertisement;
+import edu.uci.ics.luci.p2p4java.document.Advertisement;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.Element;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.StructuredTextDocument;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeService;
+import edu.uci.ics.luci.p2p4java.platform.ModuleSpecID;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.PeerGroupAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
+
 
 /* These tests blatantly haven't worked for years - the advertisement classes do not implement
  * Serializable, therefore cannot be used with Object(Input/Output)Stream.

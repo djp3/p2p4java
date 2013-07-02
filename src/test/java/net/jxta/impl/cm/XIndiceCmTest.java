@@ -58,6 +58,9 @@ package net.jxta.impl.cm;
 
 import java.io.IOException;
 
+import edu.uci.ics.luci.p2p4java.impl.cm.AdvertisementCache;
+import edu.uci.ics.luci.p2p4java.impl.cm.XIndiceAdvertisementCache;
+
 /**
  * This test overrides first AbstractCmTest which again overrides 
  * FileSystemTest, which lets us specify the testDirPrefix

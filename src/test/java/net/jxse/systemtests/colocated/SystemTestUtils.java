@@ -9,21 +9,22 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.MimeMediaType;
-import net.jxta.endpoint.ByteArrayMessageElement;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.StringMessageElement;
-import net.jxta.id.IDFactory;
-import net.jxta.pipe.PipeID;
-import net.jxta.pipe.PipeMsgEvent;
-import net.jxta.pipe.PipeMsgListener;
-import net.jxta.pipe.PipeService;
-import net.jxta.platform.NetworkManager;
-import net.jxta.protocol.PipeAdvertisement;
-import net.jxta.util.JxtaBiDiPipe;
-import net.jxta.util.JxtaServerPipe;
-import net.jxta.util.ServerPipeAcceptListener;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.endpoint.ByteArrayMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.StringMessageElement;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.pipe.PipeID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeMsgEvent;
+import edu.uci.ics.luci.p2p4java.pipe.PipeMsgListener;
+import edu.uci.ics.luci.p2p4java.pipe.PipeService;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
+import edu.uci.ics.luci.p2p4java.util.JxtaBiDiPipe;
+import edu.uci.ics.luci.p2p4java.util.JxtaServerPipe;
+import edu.uci.ics.luci.p2p4java.util.ServerPipeAcceptListener;
+
 
 public class SystemTestUtils {
 

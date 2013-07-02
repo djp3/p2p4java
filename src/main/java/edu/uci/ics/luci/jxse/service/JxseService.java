@@ -56,7 +56,7 @@
 
 package edu.uci.ics.luci.jxse.service;
 
-import net.jxta.service.JxtaService;
+import edu.uci.ics.luci.p2p4java.service.JxtaService;
 
 /**
  * API Abstraction for the Service concept in JXSE, the Java implementation of JXTA

@@ -73,6 +73,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
+import edu.uci.ics.luci.p2p4java.configuration.JxtaConfiguration;
+
 /**
  * Test of the JxtaConfiguration class.
  */

@@ -1,13 +1,14 @@
 package net.jxse.systemtests.colocated;
 
 import net.jxse.systemtests.colocated.configs.PeerConfigurator;
-import net.jxta.platform.NetworkManager;
 
 import org.junit.After;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
 
 /**
  * FIXME: This is the way I would *like* the relay tests to be done, but it does not work at

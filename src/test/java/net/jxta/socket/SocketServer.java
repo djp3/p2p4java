@@ -55,23 +55,26 @@
  */
 package net.jxta.socket;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.exception.PeerGroupException;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.pipe.PipeID;
-import net.jxta.pipe.PipeService;
-import net.jxta.platform.NetworkManager;
-import net.jxta.protocol.PipeAdvertisement;
 
 import java.io.*;
 import java.net.Socket;
 import java.net.URI;
 import java.text.MessageFormat;
+
+import edu.uci.ics.luci.p2p4java.credential.Credential;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.exception.PeerGroupException;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.pipe.PipeID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeService;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
+import edu.uci.ics.luci.p2p4java.socket.JxtaServerSocket;
+import edu.uci.ics.luci.p2p4java.socket.JxtaSocket;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import net.jxta.credential.Credential;
-import net.jxta.protocol.PeerAdvertisement;
 
 /**
  * This tutorial illustrates the use JxtaServerSocket It creates a

@@ -61,21 +61,22 @@ import java.io.*;
 import java.io.StringReader;
 import java.io.StringWriter;
 
-import net.jxta.document.Advertisement;
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.StructuredDocumentUtils;
-import net.jxta.document.XMLDocument;
-import net.jxta.impl.protocol.DiscoveryConfigAdv;
-import net.jxta.impl.protocol.GroupConfig;
-import net.jxta.impl.protocol.HTTPAdv;
-import net.jxta.impl.protocol.RdvConfigAdv;
-import net.jxta.impl.protocol.RelayConfigAdv;
-import net.jxta.peergroup.PeerGroup;
 
 import org.junit.Ignore;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.document.Advertisement;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentUtils;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.impl.protocol.DiscoveryConfigAdv;
+import edu.uci.ics.luci.p2p4java.impl.protocol.GroupConfig;
+import edu.uci.ics.luci.p2p4java.impl.protocol.HTTPAdv;
+import edu.uci.ics.luci.p2p4java.impl.protocol.RdvConfigAdv;
+import edu.uci.ics.luci.p2p4java.impl.protocol.RelayConfigAdv;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
 
 import static org.junit.Assert.*;
 

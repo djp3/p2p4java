@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import edu.uci.ics.luci.p2p4java.endpoint.Messenger;
+import edu.uci.ics.luci.p2p4java.endpoint.MessengerStateBarrier;
+
 public class MessengerStateBarrierTest {
 
     @Test(timeout=100)

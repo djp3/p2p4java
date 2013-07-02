@@ -55,6 +55,8 @@ package net.jxta.impl.content.srdisocket;
 
 import org.junit.Ignore;
 
+import edu.uci.ics.luci.p2p4java.impl.content.srdisocket.SRDISocketContentProvider;
+
 import net.jxta.impl.content.AbstractContentProviderTest;
 
 /**

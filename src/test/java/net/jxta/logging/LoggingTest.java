@@ -61,6 +61,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.logging.Logging;
 import static org.junit.Assert.*;
 
 /**

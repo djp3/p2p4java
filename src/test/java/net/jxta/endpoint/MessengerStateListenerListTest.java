@@ -8,6 +8,10 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import edu.uci.ics.luci.p2p4java.endpoint.Messenger;
+import edu.uci.ics.luci.p2p4java.endpoint.MessengerStateListener;
+import edu.uci.ics.luci.p2p4java.endpoint.MessengerStateListenerSet;
+
 public class MessengerStateListenerListTest {
 
     private MessengerStateListenerSet list;

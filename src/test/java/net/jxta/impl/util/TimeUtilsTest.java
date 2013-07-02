@@ -56,6 +56,7 @@
 
 package net.jxta.impl.util;
 
+import edu.uci.ics.luci.p2p4java.impl.util.TimeUtils;
 import junit.framework.*;
 
 /**

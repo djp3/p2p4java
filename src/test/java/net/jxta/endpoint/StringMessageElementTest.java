@@ -75,6 +75,10 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import edu.uci.ics.luci.p2p4java.endpoint.MessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.StringMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.TextMessageElement;
+
 import static org.junit.Assert.*;
 
 /**

@@ -55,14 +55,15 @@
  */
 package net.jxta.test.util;
 
-import net.jxta.document.Advertisement;
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.XMLDocument;
 
 import java.io.*;
 import java.lang.reflect.*;
+
+import edu.uci.ics.luci.p2p4java.document.Advertisement;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
 
 class Util {
 

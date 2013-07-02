@@ -66,26 +66,29 @@ import java.util.List;
 import java.util.Random;
 import java.util.Vector;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.Element;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocument;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.StructuredTextDocument;
-import net.jxta.id.ID;
-import net.jxta.id.IDFactory;
-import net.jxta.impl.util.TimeUtils;
-import net.jxta.impl.util.threads.TaskManager;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.pipe.PipeService;
-import net.jxta.protocol.PeerAdvertisement;
-import net.jxta.protocol.PipeAdvertisement;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.Element;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocument;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.StructuredTextDocument;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.cm.CacheManager;
+import edu.uci.ics.luci.p2p4java.impl.cm.XIndiceAdvertisementCache;
+import edu.uci.ics.luci.p2p4java.impl.util.TimeUtils;
+import edu.uci.ics.luci.p2p4java.impl.util.threads.TaskManager;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeService;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
 
 import static org.junit.Assert.*;
 
@@ -259,7 +262,7 @@ public class CmXIndiceImplTest {
 
     private void searchPeer() {
         long t0 = System.currentTimeMillis();
-        List<net.jxta.protocol.SrdiMessage.Entry> entries = cm.getEntries(dirname[0], false);
+        List<edu.uci.ics.luci.p2p4java.protocol.SrdiMessage.Entry> entries = cm.getEntries(dirname[0], false);
 
         assertTrue("empty keys", entries.size() != 0);
         System.out.println(

@@ -7,9 +7,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import net.jxta.id.IDFactory;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.peergroup.PeerGroupID;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jmock.Expectations;
@@ -20,6 +17,12 @@ import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.cm.Srdi;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiAPI;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 public abstract class AbstractSrdiIndexBackendConcurrencyTest {
 	

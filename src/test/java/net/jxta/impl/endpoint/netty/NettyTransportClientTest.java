@@ -5,12 +5,15 @@ import static org.junit.Assert.*;
 import java.net.UnknownHostException;
 import java.util.concurrent.Executors;
 
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.exception.PeerGroupException;
 
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.exception.PeerGroupException;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.InetSocketAddressTranslator;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.NettyTransportClient;
 
 public class NettyTransportClientTest {
     

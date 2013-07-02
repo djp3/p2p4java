@@ -57,9 +57,10 @@ package net.jxta.impl.endpoint.msgframing;
 
 import java.io.*;
 
+import edu.uci.ics.luci.p2p4java.impl.endpoint.msgframing.WelcomeMessage;
+
 import junit.framework.*;
 
-import net.jxta.impl.endpoint.msgframing.WelcomeMessage;
 
 public class WelcomeMessageTest extends TestCase {
 

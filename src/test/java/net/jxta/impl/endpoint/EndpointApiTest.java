@@ -58,9 +58,10 @@ package net.jxta.impl.endpoint;
 
 import junit.framework.*;
 
-import net.jxta.peergroup.*;
-import net.jxta.endpoint.*;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.endpoint.*;
+import edu.uci.ics.luci.p2p4java.peergroup.*;
 
 import java.io.IOException;
 
@@ -155,11 +156,11 @@ public class EndpointApiTest extends TestCase implements EndpointListener, Messe
         }
     }
 
-    public EndpointApiTest(java.lang.String testName) throws net.jxta.exception.PeerGroupException {
+    public EndpointApiTest(java.lang.String testName) throws edu.uci.ics.luci.p2p4java.exception.PeerGroupException {
 
         super(testName);
-        System.setProperty("net.jxta.tls.password", "password");
-        System.setProperty("net.jxta.tls.principal", "password");
+        System.setProperty("edu.uci.ics.luci.p2p4java.tls.password", "password");
+        System.setProperty("edu.uci.ics.luci.p2p4java.tls.principal", "password");
 
         synchronized (EndpointApiTest.class) {
             if (null == pg) {

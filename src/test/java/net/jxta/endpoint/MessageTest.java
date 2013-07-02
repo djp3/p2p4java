@@ -68,12 +68,14 @@ import java.util.Set;
 
 import java.util.ConcurrentModificationException;
 
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.endpoint.ByteArrayMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.MessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.StringMessageElement;
+
 import junit.framework.*;
 
-import net.jxta.document.MimeMediaType;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.MessageElement;
-import net.jxta.endpoint.StringMessageElement;
 
 /**
  *

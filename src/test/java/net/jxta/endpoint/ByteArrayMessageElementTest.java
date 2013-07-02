@@ -57,11 +57,12 @@
 package net.jxta.endpoint;
 
 import java.io.InputStream;
+
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.endpoint.ByteArrayMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.MessageElement;
 import junit.framework.*;
 
-import net.jxta.document.MimeMediaType;
-import net.jxta.endpoint.MessageElement;
-import net.jxta.endpoint.ByteArrayMessageElement;
 
 /**
  *

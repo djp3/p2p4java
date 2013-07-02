@@ -58,7 +58,8 @@
 package edu.uci.ics.luci.jxse.configuration;
 
 import java.util.logging.Logger;
-import net.jxta.configuration.JxtaTransportConfiguration;
+
+import edu.uci.ics.luci.p2p4java.configuration.JxtaTransportConfiguration;
 
 /**
  * Defines the TCP transport configuration when connecting to the JXTA network.

@@ -56,6 +56,8 @@
 
 package net.jxta.impl.id.UUID;
 
+import edu.uci.ics.luci.p2p4java.impl.id.UUID.UUID;
+import edu.uci.ics.luci.p2p4java.impl.id.UUID.UUIDFactory;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

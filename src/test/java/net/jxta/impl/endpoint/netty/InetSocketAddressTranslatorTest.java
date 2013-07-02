@@ -9,10 +9,12 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.net.UnknownHostException;
 
-import net.jxta.endpoint.EndpointAddress;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.InetSocketAddressTranslator;
 
 public class InetSocketAddressTranslatorTest {
 

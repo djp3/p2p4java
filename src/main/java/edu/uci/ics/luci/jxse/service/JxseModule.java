@@ -59,7 +59,7 @@ package edu.uci.ics.luci.jxse.service;
 /**
  * API Abstraction for the module concept in JXSE, the Java implementation of JXTA.
  *
- * @since 2.6 this interface is not integrated with the existing {@code net.jxta.platform.Module}
+ * @since 2.6 this interface is not integrated with the existing {@code edu.uci.ics.luci.p2p4java.platform.Module}
  * interface. Further work is expected in the future releases.
  * <p />Do not rely on this code for your applications !!!
  */

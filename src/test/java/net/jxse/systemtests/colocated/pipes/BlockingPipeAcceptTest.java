@@ -9,17 +9,18 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import net.jxse.systemtests.colocated.SystemTestUtils;
 import net.jxse.systemtests.colocated.configs.PeerConfigurator;
-import net.jxta.pipe.PipeMsgEvent;
-import net.jxta.pipe.PipeMsgListener;
-import net.jxta.platform.NetworkManager;
-import net.jxta.util.JxtaBiDiPipe;
-import net.jxta.util.JxtaServerPipe;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import edu.uci.ics.luci.p2p4java.pipe.PipeMsgEvent;
+import edu.uci.ics.luci.p2p4java.pipe.PipeMsgListener;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.util.JxtaBiDiPipe;
+import edu.uci.ics.luci.p2p4java.util.JxtaServerPipe;
 
 public class BlockingPipeAcceptTest {
 

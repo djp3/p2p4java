@@ -56,12 +56,12 @@
 
 package net.jxta.test.util;
 
-import net.jxta.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
 
 /**
  * This interface is used in order to set up an TcpConnection listener.
  *
- * @see net.jxta.endpoint.Message
+ * @see edu.uci.ics.luci.p2p4java.endpoint.Message
  *
  **/
 

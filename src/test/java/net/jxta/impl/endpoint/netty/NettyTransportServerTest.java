@@ -10,14 +10,17 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Executors;
 
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.exception.PeerGroupException;
-import net.jxta.peergroup.PeerGroupID;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jboss.netty.channel.ServerChannelFactory;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.junit.*;
+
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.exception.PeerGroupException;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.InetSocketAddressTranslator;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.NettyTransportServer;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 @Ignore("Must fix - problem with port bind")
 public class NettyTransportServerTest {

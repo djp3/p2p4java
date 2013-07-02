@@ -1,6 +1,6 @@
 package net.jxta.impl.util;
 
-import net.jxta.impl.util.SystemClock;
+import edu.uci.ics.luci.p2p4java.impl.util.SystemClock;
 
 /**
  * SystemClock implementation that allows tests to directly set what the current time is.

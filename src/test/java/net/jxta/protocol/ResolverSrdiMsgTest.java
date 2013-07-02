@@ -55,13 +55,14 @@
  */
 package net.jxta.protocol;
 
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocument;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.impl.protocol.ResolverSrdiMsgImpl;
+import edu.uci.ics.luci.p2p4java.protocol.ResolverSrdiMsg;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocument;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.impl.protocol.ResolverSrdiMsgImpl;
 
 /**
  *  A JUnit test for ResolverSrdiMsg

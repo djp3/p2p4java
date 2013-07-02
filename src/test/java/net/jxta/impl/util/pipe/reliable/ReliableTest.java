@@ -72,36 +72,43 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
-import net.jxta.discovery.DiscoveryEvent;
-import net.jxta.discovery.DiscoveryListener;
-import net.jxta.discovery.DiscoveryService;
-import net.jxta.document.Advertisement;
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.XMLDocument;
-import net.jxta.endpoint.ByteArrayMessageElement;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.MessageElement;
-import net.jxta.endpoint.StringMessageElement;
-import net.jxta.endpoint.Message.ElementIterator;
-import net.jxta.id.IDFactory;
-import net.jxta.peergroup.PeerGroup;
-// import net.jxta.peergroup.PeerGroupFactory;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.pipe.InputPipe;
-import net.jxta.pipe.OutputPipe;
-import net.jxta.pipe.OutputPipeEvent;
-import net.jxta.pipe.OutputPipeListener;
-import net.jxta.pipe.PipeID;
-import net.jxta.pipe.PipeMsgEvent;
-import net.jxta.pipe.PipeMsgListener;
-import net.jxta.pipe.PipeService;
-import net.jxta.protocol.PipeAdvertisement;
-import net.jxta.rendezvous.RendezVousService;
-import net.jxta.rendezvous.RendezvousEvent;
-import net.jxta.rendezvous.RendezvousListener;
+// import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.discovery.DiscoveryEvent;
+import edu.uci.ics.luci.p2p4java.discovery.DiscoveryListener;
+import edu.uci.ics.luci.p2p4java.discovery.DiscoveryService;
+import edu.uci.ics.luci.p2p4java.document.Advertisement;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.endpoint.ByteArrayMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.MessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.StringMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.Message.ElementIterator;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.util.pipe.reliable.AdaptiveFlowControl;
+import edu.uci.ics.luci.p2p4java.impl.util.pipe.reliable.FixedFlowControl;
+import edu.uci.ics.luci.p2p4java.impl.util.pipe.reliable.IncomingPipeAdaptor;
+import edu.uci.ics.luci.p2p4java.impl.util.pipe.reliable.OutgoingPipeAdaptorSync;
+import edu.uci.ics.luci.p2p4java.impl.util.pipe.reliable.ReliableInputStream;
+import edu.uci.ics.luci.p2p4java.impl.util.pipe.reliable.ReliableOutputStream;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.pipe.InputPipe;
+import edu.uci.ics.luci.p2p4java.pipe.OutputPipe;
+import edu.uci.ics.luci.p2p4java.pipe.OutputPipeEvent;
+import edu.uci.ics.luci.p2p4java.pipe.OutputPipeListener;
+import edu.uci.ics.luci.p2p4java.pipe.PipeID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeMsgEvent;
+import edu.uci.ics.luci.p2p4java.pipe.PipeMsgListener;
+import edu.uci.ics.luci.p2p4java.pipe.PipeService;
+import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
+import edu.uci.ics.luci.p2p4java.rendezvous.RendezVousService;
+import edu.uci.ics.luci.p2p4java.rendezvous.RendezvousEvent;
+import edu.uci.ics.luci.p2p4java.rendezvous.RendezvousListener;
 
 @Ignore("JXTA Configurator & PeerGroupFactory required")
 public class ReliableTest extends TestCase implements
@@ -273,8 +280,8 @@ public class ReliableTest extends TestCase implements
             loadElements.add(le);
         }
 
-        System.setProperty("net.jxta.tls.password", PASSWORD);
-        System.setProperty("net.jxta.tls.principal", PRINCIPAL);
+        System.setProperty("edu.uci.ics.luci.p2p4java.tls.password", PASSWORD);
+        System.setProperty("edu.uci.ics.luci.p2p4java.tls.principal", PRINCIPAL);
 
         try {
             netPeerGroup = null; // PeerGroupFactory.newNetPeerGroup(PeerGroupFactory.newPlatform());
@@ -914,8 +921,8 @@ public class ReliableTest extends TestCase implements
             + "  -debug      whether to turn on debugging in the peer (" + DEBUG + ")\n"
             + "  -adapt      Use adaptive flow control (do not)\n" + "  -iterations number of times to send a message ("
             + ITERATIONS + ")\n" + "  -delay      Basic delay unit (" + DELAY + ")\n"
-            + "  -principal  net.jxta.tls.principal property (" + PRINCIPAL + ")\n"
-            + "  -password   net.jxta.tls.password property (" + PASSWORD + ")\n";
+            + "  -principal  edu.uci.ics.luci.p2p4java.tls.principal property (" + PRINCIPAL + ")\n"
+            + "  -password   edu.uci.ics.luci.p2p4java.tls.password property (" + PASSWORD + ")\n";
 
     private static final String HELP = "Some options serve to simulate particular network conditions.\n"
             + "These conditions are simulated on the destination side of a\n"

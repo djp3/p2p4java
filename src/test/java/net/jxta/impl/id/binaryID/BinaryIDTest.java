@@ -58,17 +58,24 @@ package net.jxta.impl.id.binaryID;
 
 import java.net.URI;
 
+import edu.uci.ics.luci.p2p4java.codat.CodatID;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.id.binaryID.BinaryID;
+import edu.uci.ics.luci.p2p4java.impl.id.binaryID.BinaryIDFactory;
+import edu.uci.ics.luci.p2p4java.impl.id.binaryID.DigestTool;
+import edu.uci.ics.luci.p2p4java.impl.id.binaryID.PeerBinaryID;
+import edu.uci.ics.luci.p2p4java.impl.id.binaryID.PeerGroupBinaryID;
+import edu.uci.ics.luci.p2p4java.impl.id.binaryID.PipeBinaryID;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import net.jxta.codat.CodatID;
-import net.jxta.id.ID;
-import net.jxta.id.IDFactory;
 
 /**
  * Tests for BinaryID and DigestID
- * net.jxta.id.BinaryIDTest
+ * edu.uci.ics.luci.p2p4java.id.BinaryIDTest
  * @author Daniel Brookshier <a HREF="mailto:turbogeek@cluck.com">turbogeek@cluck.com</a>
  */
 public final class BinaryIDTest extends TestCase {
@@ -160,7 +167,7 @@ public final class BinaryIDTest extends TestCase {
             assertTrue("hashcode match one != three", one.hashCode() != three.hashCode());
 
             // Create a uuid parent
-            net.jxta.impl.id.UUID.PeerGroupID base = new net.jxta.impl.id.UUID.PeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base = new edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID();
 
             one = new PeerGroupBinaryID(base, data1, false);
             two = new PeerGroupBinaryID(base, data2, true);
@@ -187,7 +194,7 @@ public final class BinaryIDTest extends TestCase {
             assertTrue("comparison of one != five", !one.equals(five));
 
             // Check that the parent == parent in the new group.
-            net.jxta.impl.id.UUID.PeerGroupID base2 = (net.jxta.impl.id.UUID.PeerGroupID) one.getParentPeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base2 = (edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID) one.getParentPeerGroupID();
 
             assertTrue("comparison of base == base2", base.equals(base2));
 
@@ -221,7 +228,7 @@ public final class BinaryIDTest extends TestCase {
     public void testPeerID() {
         try {
             // Create a uuid parent
-            net.jxta.impl.id.UUID.PeerGroupID base = new net.jxta.impl.id.UUID.PeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base = new edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID();
             PeerBinaryID one = new PeerBinaryID(base, data1, false);
             PeerBinaryID two = new PeerBinaryID(base, data2, true);
             PeerBinaryID three = new PeerBinaryID(base, data3, false);
@@ -240,7 +247,7 @@ public final class BinaryIDTest extends TestCase {
             assertTrue("hashcode match one != three", one.hashCode() != three.hashCode());
 
             // Check that the parent == parent in the new group.
-            net.jxta.impl.id.UUID.PeerGroupID base2 = (net.jxta.impl.id.UUID.PeerGroupID) one.getPeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base2 = (edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID) one.getPeerGroupID();
 
             assertTrue("comparison of base == base2", base.equals(base2));
 
@@ -269,7 +276,7 @@ public final class BinaryIDTest extends TestCase {
     public void testPipeID() {
         try {
             // Create a uuid parent
-            net.jxta.impl.id.UUID.PeerGroupID base = new net.jxta.impl.id.UUID.PeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base = new edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID();
             PipeBinaryID one = new PipeBinaryID(base, data1, false);
             PipeBinaryID two = new PipeBinaryID(base, data2, true);
             PipeBinaryID three = new PipeBinaryID(base, data3, false);
@@ -288,7 +295,7 @@ public final class BinaryIDTest extends TestCase {
             assertTrue("hashcode match one != three", one.hashCode() != three.hashCode());
 
             // Check that the parent == parent in the new group.
-            net.jxta.impl.id.UUID.PeerGroupID base2 = (net.jxta.impl.id.UUID.PeerGroupID) one.getPeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base2 = (edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID) one.getPeerGroupID();
 
             assertTrue("comparison of base == base2", base.equals(base2));
 
@@ -320,7 +327,7 @@ public final class BinaryIDTest extends TestCase {
         String function2 = "test-test";
 
         try {
-            net.jxta.impl.id.UUID.PeerGroupID base = new net.jxta.impl.id.UUID.PeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base = new edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID();
             DigestTool digestTool = new DigestTool();
             PeerGroupBinaryID one = digestTool.createPeerGroupID(base, clearTextID, function);
             PeerGroupBinaryID two = digestTool.createPeerGroupID(base, clearTextID, function);
@@ -351,7 +358,7 @@ public final class BinaryIDTest extends TestCase {
         String function2 = "test-test";
 
         try {
-            net.jxta.impl.id.UUID.PeerGroupID base = new net.jxta.impl.id.UUID.PeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base = new edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID();
             DigestTool digestTool = new DigestTool();
             PipeBinaryID one = digestTool.createPipeID(base, clearTextID, function); 
             PipeBinaryID oneOne = digestTool.createPipeID(base, clearTextID, function); 
@@ -387,7 +394,7 @@ public final class BinaryIDTest extends TestCase {
         String function2 = "test-test";
 
         try {
-            net.jxta.impl.id.UUID.PeerGroupID base = new net.jxta.impl.id.UUID.PeerGroupID();
+            edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID base = new edu.uci.ics.luci.p2p4java.impl.id.UUID.PeerGroupID();
             DigestTool digestTool = new DigestTool();
             PeerBinaryID one = digestTool.createPeerID(base, clearTextID, function);
             PeerBinaryID two = digestTool.createPeerID(base, clearTextID, function);

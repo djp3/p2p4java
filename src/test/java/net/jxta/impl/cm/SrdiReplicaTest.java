@@ -57,10 +57,11 @@ package net.jxta.impl.cm;
 
 import java.math.BigInteger;
 
+import edu.uci.ics.luci.p2p4java.impl.util.JxtaHash;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import net.jxta.impl.util.JxtaHash;
 
 /**
  * A SrdiGetReplica unit test

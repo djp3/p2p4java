@@ -9,6 +9,8 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.uci.ics.luci.p2p4java.configuration.PropertiesUtil;
+
 public class PropertiesUtilTest {
 
 	private Properties testProps;

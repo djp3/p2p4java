@@ -16,13 +16,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.Messenger;
-import net.jxta.endpoint.MessengerStateListener;
-import net.jxta.endpoint.OutgoingMessageEvent;
-import net.jxta.id.IDFactory;
-import net.jxta.peergroup.PeerGroupID;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jmock.Expectations;
@@ -31,6 +24,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.Messenger;
+import edu.uci.ics.luci.p2p4java.endpoint.MessengerStateListener;
+import edu.uci.ics.luci.p2p4java.endpoint.OutgoingMessageEvent;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.AsynchronousMessenger;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.QueuedMessage;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.TransportUtils;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 public class AsynchronousMessengerTest {
 

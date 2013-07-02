@@ -63,23 +63,27 @@ import java.util.Map;
 
 import junit.framework.*;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.Element;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.XMLDocument;
-import net.jxta.id.IDFactory;
-import net.jxta.peergroup.PeerGroup;
-// import net.jxta.peergroup.PeerGroupFactory;
-import net.jxta.protocol.ModuleImplAdvertisement;
-import net.jxta.protocol.PeerGroupAdvertisement;
-import net.jxta.credential.AuthenticationCredential;
-import net.jxta.credential.Credential;
-import net.jxta.membership.MembershipService;
+// import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory;
 
-import net.jxta.impl.peergroup.StdPeerGroupParamAdv;
-import net.jxta.impl.membership.pse.PSEUtils.IssuerInfo;
-import net.jxta.impl.protocol.PSEConfigAdv;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.credential.AuthenticationCredential;
+import edu.uci.ics.luci.p2p4java.credential.Credential;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.Element;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.membership.pse.PSEMembershipService;
+import edu.uci.ics.luci.p2p4java.impl.membership.pse.PSEUtils;
+import edu.uci.ics.luci.p2p4java.impl.membership.pse.StringAuthenticator;
+import edu.uci.ics.luci.p2p4java.impl.membership.pse.PSEUtils.IssuerInfo;
+import edu.uci.ics.luci.p2p4java.impl.peergroup.StdPeerGroupParamAdv;
+import edu.uci.ics.luci.p2p4java.impl.protocol.PSEConfigAdv;
+import edu.uci.ics.luci.p2p4java.membership.MembershipService;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.PeerGroupAdvertisement;
 
 @Ignore("JXTA Configurator & PeerGroupFactory Required")
 public class pseMembershipTest extends TestCase {

@@ -67,7 +67,8 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Iterator;
 import java.util.Set;
-import net.jxta.impl.endpoint.msgframing.WelcomeMessage;
+
+import edu.uci.ics.luci.p2p4java.impl.endpoint.msgframing.WelcomeMessage;
 
 /**
  *JxtaSink is a utility which provides a jxta data sink. it emulates a 

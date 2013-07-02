@@ -59,6 +59,8 @@ import java.io.IOException;
 import java.io.File;
 import java.net.URI;
 
+import edu.uci.ics.luci.p2p4java.platform.NetworkConfigurator;
+
 import junit.framework.TestSuite;
 import junit.framework.TestCase;
 import junit.framework.Test;

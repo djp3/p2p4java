@@ -66,28 +66,30 @@ import java.net.URISyntaxException;
 
 import junit.framework.*;
 
-import net.jxta.access.AccessService;
-import net.jxta.access.AccessService.AccessResult;
-import net.jxta.credential.Credential;
-import net.jxta.credential.PrivilegedOperation;
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.Element;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.XMLDocument;
-import net.jxta.document.XMLElement;
-import net.jxta.id.ID;
-import net.jxta.id.IDFactory;
-import net.jxta.membership.MembershipService;
-import net.jxta.peergroup.PeerGroup;
-// import net.jxta.peergroup.PeerGroupFactory;
-import net.jxta.peergroup.WorldPeerGroupFactory;
-import net.jxta.platform.ModuleSpecID;
-import net.jxta.protocol.ModuleImplAdvertisement;
-import net.jxta.protocol.PeerGroupAdvertisement;
+// import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory;
 
-import net.jxta.impl.peergroup.StdPeerGroupParamAdv;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.access.AccessService;
+import edu.uci.ics.luci.p2p4java.access.AccessService.AccessResult;
+import edu.uci.ics.luci.p2p4java.credential.Credential;
+import edu.uci.ics.luci.p2p4java.credential.PrivilegedOperation;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.Element;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.document.XMLElement;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.access.simpleACL.SimpleACLAccessService;
+import edu.uci.ics.luci.p2p4java.impl.peergroup.StdPeerGroupParamAdv;
+import edu.uci.ics.luci.p2p4java.membership.MembershipService;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.WorldPeerGroupFactory;
+import edu.uci.ics.luci.p2p4java.platform.ModuleSpecID;
+import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.PeerGroupAdvertisement;
 
 @Ignore("JXTA Configurator & PeerGroupFactory Required")
 public class SimpleACLAccessServiceTest extends TestCase {

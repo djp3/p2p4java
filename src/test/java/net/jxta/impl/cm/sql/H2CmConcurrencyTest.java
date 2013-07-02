@@ -3,9 +3,11 @@ package net.jxta.impl.cm.sql;
 import java.io.IOException;
 
 import net.jxta.impl.cm.AbstractCmConcurrencyTest;
-import net.jxta.impl.cm.AdvertisementCache;
-import net.jxta.impl.util.threads.TaskManager;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.impl.cm.AdvertisementCache;
+import edu.uci.ics.luci.p2p4java.impl.cm.sql.H2AdvertisementCache;
+import edu.uci.ics.luci.p2p4java.impl.util.threads.TaskManager;
 
 @Ignore("Takes way too long for unit test")
 public class H2CmConcurrencyTest extends AbstractCmConcurrencyTest {

@@ -2,7 +2,10 @@ package net.jxta.impl.cm;
 
 import org.junit.Ignore;
 
-import net.jxta.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiAPI;
+import edu.uci.ics.luci.p2p4java.impl.cm.XIndiceSrdi;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+
 
 /*
  * NOTE (2010/07/06 iainmcg): These tests are presently known to fail due to incorrect file locking

@@ -7,9 +7,10 @@ import java.util.List;
 
 import org.junit.rules.TemporaryFolder;
 
-import net.jxta.platform.NetworkConfigurator;
-import net.jxta.platform.NetworkManager;
-import net.jxta.platform.NetworkManager.ConfigMode;
+import edu.uci.ics.luci.p2p4java.platform.NetworkConfigurator;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager.ConfigMode;
+
 
 /**
  * Helper class to quickly set up peers for tests

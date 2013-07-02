@@ -53,7 +53,6 @@
 
 package net.jxta.impl.content;
 
-import net.jxta.peer.PeerID;
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayOutputStream;
@@ -69,27 +68,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
-import net.jxta.content.Content;
-import net.jxta.content.ContentID;
-import net.jxta.content.ContentProvider;
-import net.jxta.content.ContentProviderSPI;
-import net.jxta.content.ContentService;
-import net.jxta.content.ContentShare;
-import net.jxta.content.ContentTransfer;
-import net.jxta.content.TransferException;
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.BinaryDocument;
-import net.jxta.document.Document;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.XMLElement;
-import net.jxta.id.ID;
-import net.jxta.id.IDFactory;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.platform.NetworkConfigurator;
-import net.jxta.platform.NetworkManager;
-import net.jxta.platform.NetworkManager.ConfigMode;
-import net.jxta.protocol.ContentShareAdvertisement;
 import net.jxta.test.util.DelegateClassLoader;
 import net.jxta.test.util.TempDir;
 
@@ -99,6 +77,29 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.content.Content;
+import edu.uci.ics.luci.p2p4java.content.ContentID;
+import edu.uci.ics.luci.p2p4java.content.ContentProvider;
+import edu.uci.ics.luci.p2p4java.content.ContentProviderSPI;
+import edu.uci.ics.luci.p2p4java.content.ContentService;
+import edu.uci.ics.luci.p2p4java.content.ContentShare;
+import edu.uci.ics.luci.p2p4java.content.ContentTransfer;
+import edu.uci.ics.luci.p2p4java.content.TransferException;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.BinaryDocument;
+import edu.uci.ics.luci.p2p4java.document.Document;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.XMLElement;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.platform.NetworkConfigurator;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager.ConfigMode;
+import edu.uci.ics.luci.p2p4java.protocol.ContentShareAdvertisement;
 
 /**
  * General tests to apply to ContentProviders to verify compliance and

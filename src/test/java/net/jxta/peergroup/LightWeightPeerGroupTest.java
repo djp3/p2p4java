@@ -55,13 +55,18 @@
  */
 package net.jxta.peergroup;
 
-import net.jxta.protocol.PeerGroupAdvertisement;
-import net.jxta.protocol.PeerAdvertisement;
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.id.IDFactory;
 
 import junit.framework.*;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.peergroup.LightWeightPeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.NetPeerGroupFactory;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.PeerGroupAdvertisement;
 
 @Ignore("JXTA Configurator Required")
 public class LightWeightPeerGroupTest extends TestCase {
@@ -77,8 +82,8 @@ public class LightWeightPeerGroupTest extends TestCase {
     @Override
     public void setUp() throws Exception {
 
-        System.setProperty("net.jxta.tls.password", "password");
-        System.setProperty("net.jxta.tls.principal", "password");
+        System.setProperty("edu.uci.ics.luci.p2p4java.tls.password", "password");
+        System.setProperty("edu.uci.ics.luci.p2p4java.tls.principal", "password");
 
         synchronized (LightWeightPeerGroup.class) {
 

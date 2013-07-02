@@ -11,10 +11,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.id.IDFactory;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.cm.CacheManager;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+
 
 /**
  * Load testing class that randomises it's calls to the index.

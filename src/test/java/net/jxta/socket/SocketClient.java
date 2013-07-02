@@ -56,22 +56,24 @@
 
 package net.jxta.socket;
 
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.platform.NetworkManager;
-import net.jxta.protocol.PipeAdvertisement;
 
 import java.io.*;
 import java.net.SocketTimeoutException;
 import java.util.Arrays;
 import java.text.MessageFormat;
+
+import edu.uci.ics.luci.p2p4java.credential.Credential;
+import edu.uci.ics.luci.p2p4java.endpoint.Messenger;
+import edu.uci.ics.luci.p2p4java.impl.util.pipe.reliable.Outgoing;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
+import edu.uci.ics.luci.p2p4java.socket.JxtaSocket;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import net.jxta.credential.Credential;
-import net.jxta.endpoint.Messenger;
-import net.jxta.impl.util.pipe.reliable.Outgoing;
-import net.jxta.peer.PeerID;
-import net.jxta.protocol.PeerAdvertisement;
 
 /**
  * This tutorial illustrates the use JxtaSocket. It attempts to bind a
@@ -290,7 +292,7 @@ public class SocketClient extends TestCase {
      *  Just like a JxtaSocket, but with built in faultiness! (not meant to be
      *  used in real applications).
      */
-    static class FaultyJxtaSocket extends net.jxta.socket.JxtaSocket {
+    static class FaultyJxtaSocket extends edu.uci.ics.luci.p2p4java.socket.JxtaSocket {
 
         static volatile double loss = 0.0;
 

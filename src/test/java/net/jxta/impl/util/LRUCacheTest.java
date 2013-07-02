@@ -60,6 +60,8 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.junit.Ignore;
 
+import edu.uci.ics.luci.p2p4java.impl.util.LRUCache;
+
 /**
  *
  * @author hamada

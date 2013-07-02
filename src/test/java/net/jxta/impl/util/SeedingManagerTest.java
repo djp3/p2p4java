@@ -62,6 +62,8 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+import edu.uci.ics.luci.p2p4java.impl.util.URISeedingManager;
+
 /**
  *
  * @author mike

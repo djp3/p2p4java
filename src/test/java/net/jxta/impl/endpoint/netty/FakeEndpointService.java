@@ -8,21 +8,22 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import net.jxta.endpoint.router.EndpointRoutingTransport;
-import net.jxta.peer.PeerID;
-import net.jxta.document.Advertisement;
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.endpoint.EndpointListener;
-import net.jxta.endpoint.EndpointService;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.MessageFilterListener;
-import net.jxta.endpoint.MessageTransport;
-import net.jxta.endpoint.Messenger;
-import net.jxta.endpoint.MessengerEventListener;
-import net.jxta.exception.PeerGroupException;
-import net.jxta.id.ID;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.service.Service;
+
+import edu.uci.ics.luci.p2p4java.document.Advertisement;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointListener;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointService;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.MessageFilterListener;
+import edu.uci.ics.luci.p2p4java.endpoint.MessageTransport;
+import edu.uci.ics.luci.p2p4java.endpoint.Messenger;
+import edu.uci.ics.luci.p2p4java.endpoint.MessengerEventListener;
+import edu.uci.ics.luci.p2p4java.endpoint.router.EndpointRoutingTransport;
+import edu.uci.ics.luci.p2p4java.exception.PeerGroupException;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.service.Service;
 
 public class FakeEndpointService implements EndpointService {
 

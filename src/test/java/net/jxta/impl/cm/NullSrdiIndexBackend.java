@@ -2,8 +2,10 @@ package net.jxta.impl.cm;
 
 import java.util.List;
 
-import net.jxta.impl.cm.Srdi.Entry;
-import net.jxta.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiAPI;
+import edu.uci.ics.luci.p2p4java.impl.cm.Srdi.Entry;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+
 
 /**
  * Null object implementation of SrdiAPI

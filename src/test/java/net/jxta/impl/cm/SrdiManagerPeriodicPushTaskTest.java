@@ -4,13 +4,15 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import net.jxta.impl.cm.SrdiManager.SrdiPushEntriesInterface;
 
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiManagerPeriodicPushTask;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiManager.SrdiPushEntriesInterface;
 
 public class SrdiManagerPeriodicPushTaskTest {
 

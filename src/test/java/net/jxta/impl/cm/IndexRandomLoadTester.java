@@ -8,10 +8,12 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
-import net.jxta.id.IDFactory;
-import net.jxta.impl.cm.Srdi.Entry;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroupID;
+
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.cm.Srdi;
+import edu.uci.ics.luci.p2p4java.impl.cm.Srdi.Entry;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 /**
  * Load testing class that randomises it's calls to the index.

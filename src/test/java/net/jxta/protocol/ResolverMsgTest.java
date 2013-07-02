@@ -62,6 +62,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import edu.uci.ics.luci.p2p4java.protocol.ResolverQueryMsg;
+import edu.uci.ics.luci.p2p4java.protocol.ResolverResponseMsg;
+
 /**
  * To test the JxseOSGiFramework API class.
  */

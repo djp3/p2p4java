@@ -56,7 +56,7 @@
 
 package net.jxta.endpoint;
 
-import net.jxta.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
 
 import junit.framework.*;
 

@@ -12,15 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import net.jxta.id.IDFactory;
-import net.jxta.impl.cm.Srdi.Entry;
 import net.jxta.impl.util.FakeSystemClock;
-import net.jxta.impl.util.JavaSystemClock;
-import net.jxta.impl.util.TimeUtils;
-import net.jxta.impl.util.threads.TaskManager;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.peergroup.PeerGroupID;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jmock.Expectations;
@@ -29,6 +21,17 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.cm.Srdi;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiAPI;
+import edu.uci.ics.luci.p2p4java.impl.cm.Srdi.Entry;
+import edu.uci.ics.luci.p2p4java.impl.util.JavaSystemClock;
+import edu.uci.ics.luci.p2p4java.impl.util.TimeUtils;
+import edu.uci.ics.luci.p2p4java.impl.util.threads.TaskManager;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 public abstract class AbstractSrdiIndexBackendTest {
 	

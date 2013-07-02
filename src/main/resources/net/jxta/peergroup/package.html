@@ -5,7 +5,7 @@
   </HEAD>
   <BODY>
     Peer groups are formed as a collection of peers that have agreed upon a 
-    common set of services. The {@link net.jxta.peergroup.PeerGroup} interface presents the
+    common set of services. The {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroup} interface presents the
     API of those services and encapsulates the group's identity and the local 
     peer's identity in that group.
 
@@ -15,14 +15,14 @@
 
     <p/>A group may be, and often is, defined and instantiated within the 
     context of another group referred to as its parent group. In that case an
-    appropriate and initialized {@link net.jxta.peergroup.PeerGroup} object, 
+    appropriate and initialized {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroup} object, 
     that represents that group may be obtained from the parent group by using 
-    one of the parent's {@link net.jxta.peergroup.PeerGroup#newGroup newGroup} 
+    one of the parent's {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroup#newGroup newGroup} 
     methods.
 
     <p/>All peers start with instantiating one well known root group
     (which has no parent) known as the <em>World Peer Group</em>. It is created
-    by calling {@link net.jxta.peergroup.PeerGroupFactory#newPlatform()}.
+    by calling {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory#newPlatform()}.
 
     <p/>The <em>World Peer Group</em> has a limited set of functionality. Most 
     peers chose to instantiate early on another well known group known as the 
@@ -30,20 +30,20 @@
     create.
 
     <p/>An object representing the <em>Net Peer Group</em> may be obtained from 
-    the {@link net.jxta.peergroup.PeerGroupFactory} by invoking the method 
-    {@link net.jxta.peergroup.PeerGroupFactory#newNetPeerGroup()}. This method
-    invokes {@link net.jxta.peergroup.PeerGroupFactory#newPlatform()} 
+    the {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory} by invoking the method 
+    {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory#newNetPeerGroup()}. This method
+    invokes {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory#newPlatform()} 
     automatically, so if an application wants to use the <em>Net Peer Group</em> 
     as its root group, invoking 
-    {@link net.jxta.peergroup.PeerGroupFactory#newNetPeerGroup()} is all that is
+    {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory#newNetPeerGroup()} is all that is
     required.
 
     <p/>All other groups should be created or instantiated within the context of
     already instantiated groups by using one of the
-    {@link net.jxta.peergroup.PeerGroup#newGroup newGroup} methods.
+    {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroup#newGroup newGroup} methods.
 
     <p/>It is possible to change the identity, name, and description of the
-    group that {@link net.jxta.peergroup.PeerGroupFactory#newNetPeerGroup()} 
+    group that {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory#newNetPeerGroup()} 
     instantiates by setting the following properties in the file 
     <code>config.properties</code> (all three must be specified for the setting 
     to take effect):
@@ -53,26 +53,26 @@
       <li><code>NetPeerGroupDesc</code></li>
     </ul>
     The same result may be obtained by invoking the following 
-    {@link net.jxta.peergroup.PeerGroupFactory} static methods:
+    {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory} static methods:
     <ul>
-      <li>{@link net.jxta.peergroup.PeerGroupFactory#setNetPGID}</li>
-      <li>{@link net.jxta.peergroup.PeerGroupFactory#setNetPGName}</li>
-      <li>{@link net.jxta.peergroup.PeerGroupFactory#setNetPGDesc}</li>
+      <li>{@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory#setNetPGID}</li>
+      <li>{@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory#setNetPGName}</li>
+      <li>{@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory#setNetPGDesc}</li>
     </ul>
 
     <p/>It is also possible to create arbitrary subgroups of the <em>World Peer
     Group</em> programatically by first starting the <em>World Peer Group</em>
     and applying one of the 
-    {@link net.jxta.peergroup.PeerGroup#newGroup newGroup} methods of the 
+    {@link edu.uci.ics.luci.p2p4java.peergroup.PeerGroup#newGroup newGroup} methods of the 
     resulting <tt>PeerGroup</tt> object. An example of creating multiple
     infrastructure peer groups.
     {@link <a href="https://jxta-jxse.dev.java.net/source/browse/jxta-jxse/trunk/tutorials/src/tutorial/multinetgroup/">Multiple Infrastructure Group Tutorial</a>}
 
-      @see net.jxta.peergroup.PeerGroup
-      @see net.jxta.peergroup.PeerGroupFactory
-      @see net.jxta.protocol.PeerGroupAdvertisement
-      @see net.jxta.protocol.PeerAdvertisement
-      @see net.jxta.id.ID
+      @see edu.uci.ics.luci.p2p4java.peergroup.PeerGroup
+      @see edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory
+      @see edu.uci.ics.luci.p2p4java.protocol.PeerGroupAdvertisement
+      @see edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement
+      @see edu.uci.ics.luci.p2p4java.id.ID
       @see <a href="https://jxta-spec.dev.java.net/nonav/JXTAProtocols.html#overview-peergroups">JXTA Protocols Specification : Peer Groups</a>
   </BODY>
 </HTML>

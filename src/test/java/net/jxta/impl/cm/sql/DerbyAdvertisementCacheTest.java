@@ -1,8 +1,10 @@
 package net.jxta.impl.cm.sql;
 
 import net.jxta.impl.cm.AbstractCmTest;
-import net.jxta.impl.cm.AdvertisementCache;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.impl.cm.AdvertisementCache;
+import edu.uci.ics.luci.p2p4java.impl.cm.sql.DerbyAdvertisementCache;
 
 @Ignore("Very long test: 10 min")
 public class DerbyAdvertisementCacheTest extends AbstractCmTest {

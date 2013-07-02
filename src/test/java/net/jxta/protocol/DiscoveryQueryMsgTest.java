@@ -55,14 +55,16 @@
  */
 package net.jxta.protocol;
 
+import edu.uci.ics.luci.p2p4java.discovery.DiscoveryService;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocument;
+import edu.uci.ics.luci.p2p4java.impl.protocol.DiscoveryQuery;
+import edu.uci.ics.luci.p2p4java.protocol.DiscoveryQueryMsg;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import net.jxta.discovery.DiscoveryService;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocument;
-import net.jxta.impl.protocol.DiscoveryQuery;
 import net.jxta.test.util.AdvUtil;
 
 /**

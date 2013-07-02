@@ -1,24 +1,26 @@
 package net.jxta.impl.endpoint.netty;
 
 import static org.junit.Assert.*;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.StructuredDocumentUtils;
-import net.jxta.document.XMLDocument;
-import net.jxta.exception.PeerGroupException;
-import net.jxta.id.ID;
-import net.jxta.impl.document.DOMXMLDocument;
-import net.jxta.impl.document.DOMXMLElement;
-import net.jxta.impl.protocol.GroupConfig;
-import net.jxta.impl.protocol.ModuleImplAdv;
-import net.jxta.impl.protocol.TCPAdv;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.platform.Module;
-import net.jxta.protocol.TransportAdvertisement;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentUtils;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.exception.PeerGroupException;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.impl.document.DOMXMLDocument;
+import edu.uci.ics.luci.p2p4java.impl.document.DOMXMLElement;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.NettyTransport;
+import edu.uci.ics.luci.p2p4java.impl.protocol.GroupConfig;
+import edu.uci.ics.luci.p2p4java.impl.protocol.ModuleImplAdv;
+import edu.uci.ics.luci.p2p4java.impl.protocol.TCPAdv;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.platform.Module;
+import edu.uci.ics.luci.p2p4java.protocol.TransportAdvertisement;
 
 public class NettyTransportTest {
     
@@ -172,7 +174,7 @@ public class NettyTransportTest {
     // TODO: move to client and server tests
 //    @Test
 //    public void testTransportIsListedInModules() {
-//        // TODO: check that we are listed in "/META-INF/services/net.jxta.platform.Module"
+//        // TODO: check that we are listed in "/META-INF/services/edu.uci.ics.luci.p2p4java.platform.Module"
 //        fail();
 //    }
     

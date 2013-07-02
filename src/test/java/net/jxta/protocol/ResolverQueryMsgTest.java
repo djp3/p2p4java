@@ -56,13 +56,15 @@
 
 package net.jxta.protocol;
 
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocument;
+import edu.uci.ics.luci.p2p4java.impl.protocol.ResolverQuery;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.ResolverQueryMsg;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocument;
-import net.jxta.impl.protocol.ResolverQuery;
-import net.jxta.peer.PeerID;
 import net.jxta.test.util.AdvUtil;
 
 /**

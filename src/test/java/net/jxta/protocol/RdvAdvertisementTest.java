@@ -58,17 +58,18 @@ package net.jxta.protocol;
 
 import junit.framework.*;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.Document;
-import net.jxta.document.XMLDocument;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.MimeMediaType;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroupID;
 
 import java.net.URI;
 
-import net.jxta.protocol.RdvAdvertisement;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.Document;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.protocol.RdvAdvertisement;
+
 
 public class RdvAdvertisementTest extends TestCase {
 

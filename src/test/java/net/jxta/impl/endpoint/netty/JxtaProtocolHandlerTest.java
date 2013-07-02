@@ -12,15 +12,6 @@ import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.List;
 
-import net.jxta.document.MimeMediaType;
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.StringMessageElement;
-import net.jxta.endpoint.WireFormatMessage;
-import net.jxta.endpoint.WireFormatMessageFactory;
-import net.jxta.impl.endpoint.msgframing.MessagePackageHeader;
-import net.jxta.impl.endpoint.msgframing.WelcomeMessage;
-import net.jxta.peer.PeerID;
 
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
@@ -36,6 +27,19 @@ import org.jboss.netty.handler.timeout.TimeoutException;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.StringMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessage;
+import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessageFactory;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.msgframing.MessagePackageHeader;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.msgframing.WelcomeMessage;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.InetSocketAddressTranslator;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.JxtaProtocolHandler;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.SerializedMessage;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
 
 public class JxtaProtocolHandlerTest {
 

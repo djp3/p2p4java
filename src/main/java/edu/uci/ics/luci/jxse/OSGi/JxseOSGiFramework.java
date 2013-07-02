@@ -62,11 +62,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.jxta.configuration.JxtaConfiguration;
 import org.osgi.framework.launch.Framework;
 import org.osgi.util.tracker.ServiceTracker;
 
 import edu.uci.ics.luci.jxse.JxseInstantiator;
+import edu.uci.ics.luci.p2p4java.configuration.JxtaConfiguration;
 
 /**
  * API access to the OSGi Framework.

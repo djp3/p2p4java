@@ -53,10 +53,6 @@
 package net.jxta.impl.content;
 
 import java.util.logging.Logger;
-import net.jxta.content.Content;
-import net.jxta.content.ContentService;
-import net.jxta.platform.Module;
-import net.jxta.service.Service;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jmock.Expectations;
@@ -64,6 +60,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.content.Content;
+import edu.uci.ics.luci.p2p4java.content.ContentService;
+import edu.uci.ics.luci.p2p4java.impl.content.ModuleWrapperFactory;
+import edu.uci.ics.luci.p2p4java.platform.Module;
+import edu.uci.ics.luci.p2p4java.service.Service;
 import static org.junit.Assert.*;
 
 /**

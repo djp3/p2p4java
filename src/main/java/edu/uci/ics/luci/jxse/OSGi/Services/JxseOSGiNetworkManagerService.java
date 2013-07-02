@@ -61,8 +61,8 @@ package edu.uci.ics.luci.jxse.OSGi.Services;
 import java.util.logging.Logger;
 
 import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration;
-import net.jxta.configuration.JxtaConfigurationException;
-import net.jxta.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.configuration.JxtaConfigurationException;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
 
 /**
  * This API class declares the contract from which an instance

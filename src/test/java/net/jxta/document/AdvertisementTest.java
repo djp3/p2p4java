@@ -58,11 +58,14 @@ package net.jxta.document;
 
 import java.io.*;
 
+import edu.uci.ics.luci.p2p4java.document.Advertisement;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.Element;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import net.jxta.document.Advertisement;
 
 public final class AdvertisementTest extends TestCase {
 
@@ -95,12 +98,12 @@ public final class AdvertisementTest extends TestCase {
         ;
 
         @Override
-        public net.jxta.document.Document getDocument(net.jxta.document.MimeMediaType asMimeType) {
+        public edu.uci.ics.luci.p2p4java.document.Document getDocument(edu.uci.ics.luci.p2p4java.document.MimeMediaType asMimeType) {
             return null;
         }
 
         @Override
-        public net.jxta.id.ID getID() {
+        public edu.uci.ics.luci.p2p4java.id.ID getID() {
             return null;
         }
 

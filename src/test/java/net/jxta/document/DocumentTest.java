@@ -69,9 +69,20 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
+import edu.uci.ics.luci.p2p4java.document.Attributable;
+import edu.uci.ics.luci.p2p4java.document.Attribute;
+import edu.uci.ics.luci.p2p4java.document.Element;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocument;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.StructuredTextDocument;
+import edu.uci.ics.luci.p2p4java.document.TextElement;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.document.XMLElement;
+import edu.uci.ics.luci.p2p4java.impl.document.LiteXMLDocument;
+import edu.uci.ics.luci.p2p4java.impl.document.PlainTextDocument;
+
 import junit.framework.TestCase;
-import net.jxta.impl.document.LiteXMLDocument;
-import net.jxta.impl.document.PlainTextDocument;
 
 /**
  * FIXME: these tests are old and very weird - when I attempted to refactor them I found some
@@ -93,7 +104,7 @@ public final class DocumentTest extends TestCase {
             + "		&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?>"
             + "&lt;!DOCTYPE InfraDesc>"
             + "&lt;InfraDesc>"
-            + "	Default Infrastructure NetPeerGroup Created by net.jxta.platform.NetworkConfigurator"
+            + "	Default Infrastructure NetPeerGroup Created by edu.uci.ics.luci.p2p4java.platform.NetworkConfigurator"
             + "&lt;/InfraDesc>"
             + "	</InfraDesc>"
             + "</jxta:CP>";
@@ -467,7 +478,7 @@ public final class DocumentTest extends TestCase {
     public void testDOMXMLStructuredDoc() throws Exception {
         StructuredDocumentFactory.Instantiator domInstantiator = null;
 
-        domInstantiator = (StructuredDocumentFactory.Instantiator) Class.forName("net.jxta.impl.document.DOMXMLDocument").getField("INSTANTIATOR").get(null);
+        domInstantiator = (StructuredDocumentFactory.Instantiator) Class.forName("edu.uci.ics.luci.p2p4java.impl.document.DOMXMLDocument").getField("INSTANTIATOR").get(null);
         assertNotNull(domInstantiator);
 
         _test(domInstantiator, MimeMediaType.XML_DEFAULTENCODING);

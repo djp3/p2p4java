@@ -66,18 +66,19 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.util.logging.Logger;
-import net.jxta.logging.Logging;
-import net.jxta.document.MimeMediaType;
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.WireFormatMessage;
-import net.jxta.endpoint.WireFormatMessageFactory;
-import net.jxta.id.ID;
-import net.jxta.peer.PeerID;
-import net.jxta.util.LimitInputStream;
-import net.jxta.impl.endpoint.msgframing.MessagePackageHeader;
-import net.jxta.impl.endpoint.msgframing.WelcomeMessage;
-import net.jxta.impl.endpoint.IPUtils;
+
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessage;
+import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessageFactory;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.IPUtils;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.msgframing.MessagePackageHeader;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.msgframing.WelcomeMessage;
+import edu.uci.ics.luci.p2p4java.logging.Logging;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.util.LimitInputStream;
 
 /**
  *  Low-level TcpMessenger

@@ -1,4 +1,4 @@
 # List of ID types supported.
-net.jxta.impl.id.UUID.IDFormat
-net.jxta.impl.id.CBID.IDFormat
-net.jxta.impl.id.binaryID.IDFormat
+edu.uci.ics.luci.p2p4java.impl.id.UUID.IDFormat
+edu.uci.ics.luci.p2p4java.impl.id.CBID.IDFormat
+edu.uci.ics.luci.p2p4java.impl.id.binaryID.IDFormat

@@ -57,28 +57,29 @@ package net.jxta.test.util;
 
 import java.util.Iterator;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.XMLDocument;
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.MessageElement;
-import net.jxta.endpoint.StringMessageElement;
-import net.jxta.endpoint.TextDocumentMessageElement;
-import net.jxta.endpoint.WireFormatMessage;
-import net.jxta.endpoint.WireFormatMessageFactory;
-import net.jxta.impl.endpoint.EndpointServiceImpl;
-import net.jxta.impl.endpoint.router.EndpointRouterMessage;
-import net.jxta.impl.membership.none.NoneMembershipService;
-import net.jxta.impl.rendezvous.StdRendezVousService;
-import net.jxta.membership.MembershipService;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.protocol.PeerAdvertisement;
-import net.jxta.protocol.RouteAdvertisement;
-import net.jxta.util.CountingOutputStream;
-import net.jxta.util.DevNullOutputStream;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.MessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.StringMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.TextDocumentMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessage;
+import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessageFactory;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.EndpointServiceImpl;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.router.EndpointRouterMessage;
+import edu.uci.ics.luci.p2p4java.impl.membership.none.NoneMembershipService;
+import edu.uci.ics.luci.p2p4java.impl.rendezvous.StdRendezVousService;
+import edu.uci.ics.luci.p2p4java.membership.MembershipService;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.RouteAdvertisement;
+import edu.uci.ics.luci.p2p4java.util.CountingOutputStream;
+import edu.uci.ics.luci.p2p4java.util.DevNullOutputStream;
+
 
 /**
  *  Utility class to create the various types of JXTA mesasges

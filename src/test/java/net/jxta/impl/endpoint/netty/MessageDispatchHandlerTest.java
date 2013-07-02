@@ -3,10 +3,6 @@ package net.jxta.impl.endpoint.netty;
 
 import java.net.URI;
 
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.endpoint.Message;
-import net.jxta.impl.endpoint.msgframing.WelcomeMessage;
-import net.jxta.peer.PeerID;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jboss.netty.channel.ChannelPipeline;
@@ -16,6 +12,14 @@ import org.jmock.Sequence;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.msgframing.WelcomeMessage;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.MessageArrivalListener;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.MessageDispatchHandler;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.NettyChannelRegistry;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
 
 public class MessageDispatchHandlerTest {
 

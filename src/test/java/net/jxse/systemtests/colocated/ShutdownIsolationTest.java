@@ -1,11 +1,12 @@
 package net.jxse.systemtests.colocated;
 
 import static org.junit.Assert.*;
-import net.jxta.platform.NetworkManager;
-import net.jxta.platform.NetworkManager.ConfigMode;
 
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
+
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager.ConfigMode;
 
 @Ignore("Must fix")
 public class ShutdownIsolationTest {

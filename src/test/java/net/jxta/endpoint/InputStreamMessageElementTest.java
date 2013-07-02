@@ -66,11 +66,12 @@ import java.util.Collections;
 
 import java.io.IOException;
 
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.endpoint.InputStreamMessageElement;
+import edu.uci.ics.luci.p2p4java.endpoint.MessageElement;
+
 import junit.framework.*;
 
-import net.jxta.document.MimeMediaType;
-import net.jxta.endpoint.MessageElement;
-import net.jxta.endpoint.InputStreamMessageElement;
 
 /**
  *

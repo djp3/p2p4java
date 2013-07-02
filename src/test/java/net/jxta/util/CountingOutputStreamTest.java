@@ -10,6 +10,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.uci.ics.luci.p2p4java.util.CountingOutputStream;
+
 public class CountingOutputStreamTest {
 
     private FakeOutputStream underlying;

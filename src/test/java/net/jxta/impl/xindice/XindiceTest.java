@@ -62,11 +62,12 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import net.jxta.impl.xindice.core.data.Key;
-import net.jxta.impl.xindice.core.data.Value;
-import net.jxta.impl.xindice.core.DBException;
-import net.jxta.impl.xindice.core.filer.BTreeFiler;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.impl.xindice.core.DBException;
+import edu.uci.ics.luci.p2p4java.impl.xindice.core.data.Key;
+import edu.uci.ics.luci.p2p4java.impl.xindice.core.data.Value;
+import edu.uci.ics.luci.p2p4java.impl.xindice.core.filer.BTreeFiler;
 
 @Ignore("Takes too long to run")
 public class XindiceTest extends TestCase {

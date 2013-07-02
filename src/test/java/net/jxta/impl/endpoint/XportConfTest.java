@@ -58,20 +58,21 @@ package net.jxta.impl.endpoint;
 
 import junit.framework.*;
 
-import net.jxta.peergroup.PeerGroup;
-// import net.jxta.peergroup.PeerGroupFactory;
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.document.*;
-import net.jxta.peergroup.WorldPeerGroupFactory;
-import net.jxta.protocol.PeerAdvertisement;
-import net.jxta.protocol.RouteAdvertisement;
-import net.jxta.protocol.ConfigParams;
-import net.jxta.protocol.TransportAdvertisement;
+// import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory;
 
-import net.jxta.impl.protocol.HTTPAdv;
-import net.jxta.impl.protocol.PlatformConfig;
-import net.jxta.impl.protocol.TCPAdv;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.document.*;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.impl.protocol.HTTPAdv;
+import edu.uci.ics.luci.p2p4java.impl.protocol.PlatformConfig;
+import edu.uci.ics.luci.p2p4java.impl.protocol.TCPAdv;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.WorldPeerGroupFactory;
+import edu.uci.ics.luci.p2p4java.protocol.ConfigParams;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.RouteAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.TransportAdvertisement;
 
 import java.util.Enumeration;
 import java.util.Vector;
@@ -86,7 +87,7 @@ public class XportConfTest extends TestCase {
     static PeerGroup pg;
     static int count;
 
-    public XportConfTest(java.lang.String testName) throws net.jxta.exception.PeerGroupException {
+    public XportConfTest(java.lang.String testName) throws edu.uci.ics.luci.p2p4java.exception.PeerGroupException {
 
         super(testName);
     }
@@ -305,8 +306,8 @@ public class XportConfTest extends TestCase {
                 final PeerGroup wpg = new WorldPeerGroupFactory().getWorldPeerGroup();
                 // Create one for nothing. Just to make sure the config
                 // is created.
-                System.setProperty("net.jxta.tls.password", "password");
-                System.setProperty("net.jxta.tls.principal", "password");
+                System.setProperty("edu.uci.ics.luci.p2p4java.tls.password", "password");
+                System.setProperty("edu.uci.ics.luci.p2p4java.tls.principal", "password");
                 pg = null; // PeerGroupFactory.newNetPeerGroup(wpg);
 
                 // Throw that one away.
@@ -316,8 +317,8 @@ public class XportConfTest extends TestCase {
                 backupConfig();
                 fixConfig();
 
-                System.setProperty("net.jxta.tls.password", "password");
-                System.setProperty("net.jxta.tls.principal", "password");
+                System.setProperty("edu.uci.ics.luci.p2p4java.tls.password", "password");
+                System.setProperty("edu.uci.ics.luci.p2p4java.tls.principal", "password");
                 pg = null; // PeerGroupFactory.newNetPeerGroup(wpg);
             } catch (Exception e) {
                 if (pg != null) {

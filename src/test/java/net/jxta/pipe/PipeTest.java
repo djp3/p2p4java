@@ -66,18 +66,23 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.Messenger;
-import net.jxta.id.ID;
-import net.jxta.peergroup.PeerGroup;
-// import net.jxta.peergroup.PeerGroupFactory;
-import net.jxta.protocol.PipeAdvertisement;
-import net.jxta.peer.PeerID;
+// import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory;
 
-import net.jxta.impl.endpoint.tls.TlsTransport;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.Messenger;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.tls.TlsTransport;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.pipe.InputPipe;
+import edu.uci.ics.luci.p2p4java.pipe.OutputPipe;
+import edu.uci.ics.luci.p2p4java.pipe.PipeID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeService;
+import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
 
 @Ignore("JXTA Configurator required")
 public class PipeTest extends TestCase {
@@ -91,8 +96,8 @@ public class PipeTest extends TestCase {
     public PipeTest(java.lang.String testName) throws Exception {
         super(testName);
 
-        System.setProperty("net.jxta.tls.password", "password");
-        System.setProperty("net.jxta.tls.principal", "password");
+        System.setProperty("edu.uci.ics.luci.p2p4java.tls.password", "password");
+        System.setProperty("edu.uci.ics.luci.p2p4java.tls.principal", "password");
 
         synchronized (PipeTest.class) {
             if (null == pg) {

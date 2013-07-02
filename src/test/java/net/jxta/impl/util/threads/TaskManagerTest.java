@@ -9,6 +9,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.uci.ics.luci.p2p4java.impl.util.threads.TaskManager;
+
 public class TaskManagerTest {
 
     private Properties oldProperties;

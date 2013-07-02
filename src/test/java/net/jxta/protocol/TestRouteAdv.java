@@ -78,25 +78,28 @@ import java.util.Set;
 import java.util.Vector;
 
 import net.jxse.systemtests.colocated.configs.PeerConfigurator;
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.StructuredTextDocument;
-import net.jxta.document.XMLDocument;
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.id.IDFactory;
-import net.jxta.impl.protocol.RouteQuery;
-import net.jxta.impl.protocol.RouteResponse;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.platform.NetworkConfigurator;
-import net.jxta.platform.NetworkManager;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.document.StructuredTextDocument;
+import edu.uci.ics.luci.p2p4java.document.XMLDocument;
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.protocol.RouteQuery;
+import edu.uci.ics.luci.p2p4java.impl.protocol.RouteResponse;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.platform.NetworkConfigurator;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.protocol.AccessPointAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.RouteAdvertisement;
 
 /**
  *  This is a simple test for Route and AccessPoint advertisement

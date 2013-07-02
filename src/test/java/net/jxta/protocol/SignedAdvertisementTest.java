@@ -61,18 +61,21 @@ import java.lang.reflect.UndeclaredThrowableException;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import net.jxta.document.*;
-import net.jxta.credential.Credential;
-import net.jxta.credential.AuthenticationCredential;
-import net.jxta.membership.MembershipService;
-import net.jxta.peergroup.WorldPeerGroupFactory;
-import net.jxta.peergroup.PeerGroup;
-// import net.jxta.peergroup.PeerGroupFactory;
+// import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupFactory;
 
-import net.jxta.exception.PeerGroupException;
 
-import net.jxta.impl.membership.pse.StringAuthenticator;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.credential.AuthenticationCredential;
+import edu.uci.ics.luci.p2p4java.credential.Credential;
+import edu.uci.ics.luci.p2p4java.document.*;
+import edu.uci.ics.luci.p2p4java.exception.PeerGroupException;
+import edu.uci.ics.luci.p2p4java.impl.membership.pse.StringAuthenticator;
+import edu.uci.ics.luci.p2p4java.membership.MembershipService;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.WorldPeerGroupFactory;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.SignedAdvertisement;
 
 /**
  * */

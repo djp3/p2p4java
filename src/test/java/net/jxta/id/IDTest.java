@@ -63,10 +63,13 @@ import java.io.ObjectOutputStream;
 
 import java.net.URI;
 
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import net.jxta.peergroup.PeerGroupID;
 
 /**
  * @author  mike

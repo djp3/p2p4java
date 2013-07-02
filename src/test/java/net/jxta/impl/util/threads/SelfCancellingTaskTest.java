@@ -5,6 +5,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import edu.uci.ics.luci.p2p4java.impl.util.threads.SelfCancellingTask;
+
 import junit.framework.TestCase;
 
 

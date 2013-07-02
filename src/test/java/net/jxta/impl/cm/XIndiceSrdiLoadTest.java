@@ -2,6 +2,8 @@ package net.jxta.impl.cm;
 
 import org.junit.Ignore;
 
+import edu.uci.ics.luci.p2p4java.impl.cm.XIndiceSrdi;
+
 /*
  * NOTE (2010/07/06 iainmcg): the xindice implementation is known to be slow and so times out
  * on these very aggressive load tests. It is unlikely that the implementation could be improved

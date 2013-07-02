@@ -15,6 +15,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import edu.uci.ics.luci.p2p4java.util.JxtaBiDiPipe;
+import edu.uci.ics.luci.p2p4java.util.QueuingServerPipeAcceptor;
+
 public class QueuingServerPipeAcceptorTest {
 
     @Rule

@@ -4,19 +4,23 @@ import java.io.IOException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import net.jxta.id.IDFactory;
-import net.jxta.impl.cm.SrdiManager.SrdiPushEntriesInterface;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.rendezvous.RendezVousService;
-import net.jxta.rendezvous.RendezVousStatus;
-import net.jxta.rendezvous.RendezvousEvent;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiAPI;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiManager;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiManagerPeriodicPushTask;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiManager.SrdiPushEntriesInterface;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.rendezvous.RendezVousService;
+import edu.uci.ics.luci.p2p4java.rendezvous.RendezVousStatus;
+import edu.uci.ics.luci.p2p4java.rendezvous.RendezvousEvent;
 
 @Ignore("Needs Updating to junit4 and tests revisited")
 public class SrdiTest {

@@ -63,16 +63,17 @@ import java.security.ProviderException;
 import java.security.NoSuchAlgorithmException;
 import java.io.UnsupportedEncodingException;
 
+import edu.uci.ics.luci.p2p4java.codat.CodatID;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeID;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import net.jxta.codat.CodatID;
-import net.jxta.id.ID;
-import net.jxta.id.IDFactory;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.pipe.PipeID;
 
 /**
  * @author  mike

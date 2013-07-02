@@ -1,7 +1,8 @@
 package net.jxta.impl.cm.sql;
 
+import edu.uci.ics.luci.p2p4java.impl.cm.AdvertisementCache;
+import edu.uci.ics.luci.p2p4java.impl.cm.sql.H2AdvertisementCache;
 import net.jxta.impl.cm.AbstractCmTest;
-import net.jxta.impl.cm.AdvertisementCache;
 
 public class H2AdvertisementCacheTest extends AbstractCmTest {
 

@@ -60,13 +60,14 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.Messenger;
-import net.jxta.impl.util.TimeUtils;
 
-import net.jxta.impl.util.pipe.reliable.*;
-import net.jxta.logging.Logging;
 import java.util.logging.Logger;
+
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.Messenger;
+import edu.uci.ics.luci.p2p4java.impl.util.TimeUtils;
+import edu.uci.ics.luci.p2p4java.impl.util.pipe.reliable.*;
+import edu.uci.ics.luci.p2p4java.logging.Logging;
 
 /**
  *  An Outgoing Messenger adpator that implements synthetic faults. The faults

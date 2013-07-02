@@ -66,6 +66,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+
 import junit.framework.*;
 
 public class MimeMediaTypeTest extends TestCase {

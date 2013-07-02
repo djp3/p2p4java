@@ -56,13 +56,6 @@ package net.jxta.impl.content;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Logger;
-import net.jxta.content.ContentID;
-import net.jxta.content.ContentProviderEvent;
-import net.jxta.content.ContentProviderListener;
-import net.jxta.content.ContentProviderSPI;
-import net.jxta.content.ContentShare;
-import net.jxta.id.IDFactory;
-import net.jxta.peergroup.PeerGroupID;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jmock.Expectations;
@@ -70,6 +63,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.content.ContentID;
+import edu.uci.ics.luci.p2p4java.content.ContentProviderEvent;
+import edu.uci.ics.luci.p2p4java.content.ContentProviderListener;
+import edu.uci.ics.luci.p2p4java.content.ContentProviderSPI;
+import edu.uci.ics.luci.p2p4java.content.ContentShare;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.content.EventAggregator;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 import static org.junit.Assert.*;
 
 /**

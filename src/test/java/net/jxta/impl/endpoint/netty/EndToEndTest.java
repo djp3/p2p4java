@@ -10,15 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Executors;
 
-import net.jxta.endpoint.EndpointAddress;
-import net.jxta.endpoint.Message;
-import net.jxta.endpoint.Messenger;
-import net.jxta.endpoint.StringMessageElement;
-import net.jxta.impl.endpoint.IPUtils;
 import net.jxta.impl.endpoint.netty.FakeEndpointService.ReceivedMessage;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.peergroup.PeerGroupID;
 
 import org.jboss.netty.channel.ChannelFactory;
 import org.jboss.netty.channel.ServerChannelFactory;
@@ -32,6 +24,18 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import edu.uci.ics.luci.p2p4java.endpoint.EndpointAddress;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.endpoint.Messenger;
+import edu.uci.ics.luci.p2p4java.endpoint.StringMessageElement;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.IPUtils;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.InetSocketAddressTranslator;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.NettyTransportClient;
+import edu.uci.ics.luci.p2p4java.impl.endpoint.netty.NettyTransportServer;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 @RunWith(JMock.class)
 public class EndToEndTest {

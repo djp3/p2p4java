@@ -6,10 +6,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import net.jxta.endpoint.Message;
-import net.jxta.pipe.PipeMsgEvent;
-import net.jxta.pipe.PipeMsgListener;
-import net.jxta.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.endpoint.Message;
+import edu.uci.ics.luci.p2p4java.pipe.PipeMsgEvent;
+import edu.uci.ics.luci.p2p4java.pipe.PipeMsgListener;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
+
 
 public class LoadTester {
 

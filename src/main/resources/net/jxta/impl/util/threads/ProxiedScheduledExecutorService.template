@@ -1,4 +1,4 @@
-package net.jxta.impl.util.threads;
+package edu.uci.ics.luci.p2p4java.impl.util.threads;
 
 import java.util.Collection;
 import java.util.Collections;

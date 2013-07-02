@@ -61,6 +61,9 @@ import junit.framework.*;
 import java.io.*;
 import java.util.*;
 
+import edu.uci.ics.luci.p2p4java.impl.util.BASE64InputStream;
+import edu.uci.ics.luci.p2p4java.impl.util.BASE64OutputStream;
+
 /**
  *
  * @author mike

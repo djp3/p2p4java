@@ -65,10 +65,11 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
-import net.jxta.configuration.JxtaPeerConfiguration;
-import net.jxta.configuration.PropertiesUtil;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroupID;
+
+import edu.uci.ics.luci.p2p4java.configuration.JxtaPeerConfiguration;
+import edu.uci.ics.luci.p2p4java.configuration.PropertiesUtil;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 /**
  *

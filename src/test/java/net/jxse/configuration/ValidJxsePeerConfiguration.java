@@ -59,9 +59,9 @@ package net.jxse.configuration;
 import java.util.logging.Logger;
 
 import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration;
-import net.jxta.id.IDFactory;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 /**
  * Dummy valid Jxse peer configuration for testing purposes

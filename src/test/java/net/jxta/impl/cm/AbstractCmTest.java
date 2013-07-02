@@ -73,18 +73,21 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import net.jxta.document.AdvertisementFactory;
-import net.jxta.document.Element;
-import net.jxta.document.MimeMediaType;
-import net.jxta.document.StructuredDocument;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
+import edu.uci.ics.luci.p2p4java.document.Element;
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocument;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.cm.AdvertisementCache;
+import edu.uci.ics.luci.p2p4java.impl.cm.CacheManager;
+import edu.uci.ics.luci.p2p4java.impl.util.TimeUtils;
+import edu.uci.ics.luci.p2p4java.impl.util.threads.TaskManager;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
+import edu.uci.ics.luci.p2p4java.protocol.SrdiMessage.Entry;
+
 import net.jxta.impl.util.FakeSystemClock;
-import net.jxta.impl.util.TimeUtils;
-import net.jxta.impl.util.threads.TaskManager;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.protocol.PeerAdvertisement;
-import net.jxta.protocol.SrdiMessage.Entry;
 
 import static org.junit.Assert.*;
 

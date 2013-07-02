@@ -3,7 +3,9 @@ package net.jxta.impl.cm.sql;
 import java.io.File;
 import java.io.IOException;
 
-import net.jxta.impl.util.threads.TaskManager;
+import edu.uci.ics.luci.p2p4java.impl.cm.sql.DerbyAdvertisementCache;
+import edu.uci.ics.luci.p2p4java.impl.util.threads.TaskManager;
+
 
 public class DerbySeedDbGenerator {
 

@@ -1,7 +1,7 @@
 package net.jxta.impl.endpoint.netty;
 
-import net.jxta.endpoint.MessengerEvent;
-import net.jxta.endpoint.MessengerEventListener;
+import edu.uci.ics.luci.p2p4java.endpoint.MessengerEvent;
+import edu.uci.ics.luci.p2p4java.endpoint.MessengerEventListener;
 
 public class FakeMessengerEventListener implements MessengerEventListener {
 

@@ -59,13 +59,15 @@ package net.jxta.protocol;
 import java.io.*;
 import java.net.URI;
 
+import edu.uci.ics.luci.p2p4java.document.*;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.pipe.PipeID;
+import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import net.jxta.document.*;
-import net.jxta.id.ID;
-import net.jxta.pipe.PipeID;
 
 /**
  * @author nadment

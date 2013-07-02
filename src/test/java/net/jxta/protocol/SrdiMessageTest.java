@@ -57,13 +57,15 @@ package net.jxta.protocol;
 
 import junit.framework.*;
 
-import net.jxta.document.StructuredDocument;
-import net.jxta.document.StructuredDocumentFactory;
-import net.jxta.document.MimeMediaType;
-import net.jxta.impl.protocol.SrdiMessageImpl;
 
 import java.util.Collection;
 import java.util.Vector;
+
+import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocument;
+import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
+import edu.uci.ics.luci.p2p4java.impl.protocol.SrdiMessageImpl;
+import edu.uci.ics.luci.p2p4java.protocol.SrdiMessage;
 
 /**
  *  A JUnit test for SrdiMessage

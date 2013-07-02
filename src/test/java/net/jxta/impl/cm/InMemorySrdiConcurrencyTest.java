@@ -1,7 +1,10 @@
 package net.jxta.impl.cm;
 
-import net.jxta.peergroup.PeerGroup;
 import org.junit.Ignore;
+
+import edu.uci.ics.luci.p2p4java.impl.cm.InMemorySrdi;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiAPI;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
 
 @Ignore("Should not override default constructor in junit")
 public class InMemorySrdiConcurrencyTest extends AbstractSrdiIndexBackendConcurrencyTest {

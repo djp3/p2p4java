@@ -64,8 +64,8 @@ import java.util.logging.Logger;
 import edu.uci.ics.luci.jxse.OSGi.Services.JxseOSGiNetworkManagerService;
 import edu.uci.ics.luci.jxse.configuration.JxseConfigurationTool;
 import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration;
-import net.jxta.configuration.JxtaConfigurationException;
-import net.jxta.platform.NetworkManager;
+import edu.uci.ics.luci.p2p4java.configuration.JxtaConfigurationException;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
 
 /**
  * This class implements the {@code JxseOSGiNetworkManagerService} API.

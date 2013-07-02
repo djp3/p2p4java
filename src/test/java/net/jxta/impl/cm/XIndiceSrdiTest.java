@@ -5,13 +5,17 @@ import static org.junit.Assert.*;
 import java.net.URI;
 import java.util.List;
 
-import net.jxta.impl.cm.Srdi.Entry;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.peergroup.PeerGroupID;
 
 import org.jmock.Expectations;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.impl.cm.Srdi;
+import edu.uci.ics.luci.p2p4java.impl.cm.SrdiAPI;
+import edu.uci.ics.luci.p2p4java.impl.cm.XIndiceSrdi;
+import edu.uci.ics.luci.p2p4java.impl.cm.Srdi.Entry;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 
 public class XIndiceSrdiTest extends AbstractSrdiIndexBackendTest {
 
@@ -87,7 +91,7 @@ public class XIndiceSrdiTest extends AbstractSrdiIndexBackendTest {
 			mockContext.checking(createExpectationsForConstruction_withPeerGroup_IndexName(group, GROUP_ID_1, "testGroup"));
 			
 			Srdi srdiIndex = new Srdi(group, "testIndex");
-			assertEquals("net.jxta.impl.cm.XIndiceSrdi", srdiIndex.getBackendClassName());
+			assertEquals("edu.uci.ics.luci.p2p4java.impl.cm.XIndiceSrdi", srdiIndex.getBackendClassName());
 			srdiIndex.stop();
 		} finally {
 			if(oldBackend != null) {

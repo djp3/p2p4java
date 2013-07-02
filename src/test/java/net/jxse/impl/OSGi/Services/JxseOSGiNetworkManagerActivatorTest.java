@@ -60,13 +60,6 @@ import net.jxse.configuration.ValidJxsePeerConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
-import net.jxta.configuration.JxtaConfigurationException;
-import net.jxta.exception.PeerGroupException;
-import net.jxta.id.IDFactory;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.platform.NetworkConfigurator;
-import net.jxta.platform.NetworkManager;
 import org.junit.*;
 
 import static org.junit.Assert.*;
@@ -81,6 +74,13 @@ import edu.uci.ics.luci.jxse.configuration.JxseMulticastTransportConfiguration;
 import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration;
 import edu.uci.ics.luci.jxse.configuration.JxseTcpTransportConfiguration;
 import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration.ConnectionMode;
+import edu.uci.ics.luci.p2p4java.configuration.JxtaConfigurationException;
+import edu.uci.ics.luci.p2p4java.exception.PeerGroupException;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.platform.NetworkConfigurator;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
 
 /**
  * Test of JxseOSGiNetworkManager using OSGi

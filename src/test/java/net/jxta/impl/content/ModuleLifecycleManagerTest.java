@@ -54,11 +54,6 @@
 package net.jxta.impl.content;
 
 import java.util.logging.Logger;
-import net.jxta.exception.PeerGroupException;
-import net.jxta.id.ID;
-import net.jxta.id.IDFactory;
-import net.jxta.peergroup.PeerGroup;
-import net.jxta.platform.Module;
 import net.jxta.test.util.JUnitRuleMockery;
 
 import org.jmock.Expectations;
@@ -67,6 +62,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import edu.uci.ics.luci.p2p4java.exception.PeerGroupException;
+import edu.uci.ics.luci.p2p4java.id.ID;
+import edu.uci.ics.luci.p2p4java.id.IDFactory;
+import edu.uci.ics.luci.p2p4java.impl.content.ModuleLifecycleListener;
+import edu.uci.ics.luci.p2p4java.impl.content.ModuleLifecycleManager;
+import edu.uci.ics.luci.p2p4java.impl.content.ModuleLifecycleManagerListener;
+import edu.uci.ics.luci.p2p4java.impl.content.ModuleLifecycleState;
+import edu.uci.ics.luci.p2p4java.impl.content.ModuleLifecycleTracker;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
+import edu.uci.ics.luci.p2p4java.platform.Module;
 import static org.junit.Assert.*;
 
 /**

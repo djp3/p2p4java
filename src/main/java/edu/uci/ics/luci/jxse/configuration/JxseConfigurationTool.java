@@ -62,11 +62,12 @@ import java.net.URI;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.jxta.configuration.JxtaConfigurationException;
-import net.jxta.peer.PeerID;
-import net.jxta.peergroup.PeerGroupID;
-import net.jxta.platform.NetworkConfigurator;
-import net.jxta.platform.NetworkManager;
+
+import edu.uci.ics.luci.p2p4java.configuration.JxtaConfigurationException;
+import edu.uci.ics.luci.p2p4java.peer.PeerID;
+import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
+import edu.uci.ics.luci.p2p4java.platform.NetworkConfigurator;
+import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
 
 /**
  * Provides a set of tool methods to facilitate the import and export of configuration from
