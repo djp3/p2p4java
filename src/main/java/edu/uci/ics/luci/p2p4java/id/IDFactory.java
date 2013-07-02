@@ -79,6 +79,7 @@ import edu.uci.ics.luci.p2p4java.pipe.PipeID;
 import edu.uci.ics.luci.p2p4java.platform.ModuleClassID;
 import edu.uci.ics.luci.p2p4java.platform.ModuleSpecID;
 import edu.uci.ics.luci.p2p4java.util.ClassFactory;
+import edu.uci.ics.luci.p2p4java.util.P2p4Java;
 
 /**
  *  A factory class for creating new ID instances and for constructing ID
@@ -625,10 +626,10 @@ public final class IDFactory extends ClassFactory<String, IDFactory.Instantiator
 
         try {
             // Get our resource bundle
-            ResourceBundle jxtaRsrcs = ResourceBundle.getBundle("edu.uci.ics.luci.p2p4java.impl.config");
+            Map<String, String> jxtaRsrcs = P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config");
 
             // set the default ID Format.
-            idNewInstances = jxtaRsrcs.getString("IDNewInstances").trim();
+            idNewInstances = jxtaRsrcs.get("IDNewInstances").trim();
         } catch (MissingResourceException notFound) {
             // This is an error because we can't start without a concept of ID.
             IllegalStateException failure =

@@ -1,10 +1,9 @@
 package edu.uci.ics.luci.p2p4java.util;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
-import edu.uci.ics.luci.p2p4java.content.ContentProviderSPI;
-import edu.uci.ics.luci.p2p4java.impl.content.defprovider.DefaultContentProvider;
+import java.util.Map;
 
 public class P2p4Java {
 
@@ -97,6 +96,31 @@ public class P2p4Java {
 			ret.add("urn:jxta:uuid-deadbeefdeafbabafeedbabe000000010306 "+edu.uci.ics.luci.p2p4java.impl.peergroup.StdPeerGroup.class.getCanonicalName()+" General Purpose Peer Group Implementation");
 		}
 		return(ret);
+	}
+	
+	public static Map<String,String> getBundle(String resource){
+		HashMap<String, String> ret = new HashMap<String,String>();
+		if(resource.equals("edu.uci.ics.luci.p2p4java.impl.config")){
+			//# JXTA Distribution Configuration Properties File
+			//#
+			//# This file contains properties which configure several basic defaults
+			//# for JXTA distributions. Normally these values do not need to be changed
+			//# by applications. (Most of the values have remained been unchanged since 
+			//# they were originally defined).
+			//#
+			//# ID of the net peer group as a URI
+			ret.put("NetPeerGroupID","jxta-NetGroup");
+
+			//# Name of the Net Peer Group
+			ret.put("NetPeerGroupName","NetPeerGroup");
+
+			//# Description of the Net Peer Group
+			ret.put("NetPeerGroupDesc","default Net Peer Group");
+
+			//# Default type of ID to use when creating an ID
+			ret.put("IDNewInstances","cbid");
+		}
+		return ret;
 	}
 
 }

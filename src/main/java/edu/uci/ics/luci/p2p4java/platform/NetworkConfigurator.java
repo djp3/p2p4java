@@ -86,6 +86,7 @@ import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
 import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 import edu.uci.ics.luci.p2p4java.protocol.ConfigParams;
 import edu.uci.ics.luci.p2p4java.protocol.TransportAdvertisement;
+import edu.uci.ics.luci.p2p4java.util.P2p4Java;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -100,6 +101,7 @@ import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.NoSuchElementException;
 import java.util.PropertyResourceBundle;
@@ -2004,7 +2006,7 @@ public class NetworkConfigurator {
         infraPeerGroupConfig = (PeerGroupConfigAdv) AdvertisementFactory.newAdvertisement(
                 PeerGroupConfigAdv.getAdvertisementType());
 
-        NetGroupTunables tunables = new NetGroupTunables(ResourceBundle.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
+        NetGroupTunables tunables = new NetGroupTunables(P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
 
         infraPeerGroupConfig.setPeerGroupID(tunables.id);
         infraPeerGroupConfig.setName(tunables.name);
@@ -2451,6 +2453,51 @@ public class NetworkConfigurator {
                 idTmp = IDFactory.fromURI(new URI(ID.URIEncodingName + ":" + ID.URNNamespace + ":" + idTmpStr));
                 nameTmp = rsrcs.getString("NetPeerGroupName").trim();
                 descTmp = (XMLElement) StructuredDocumentFactory.newStructuredDocument(MimeMediaType.XMLUTF8, "desc", rsrcs.getString("NetPeerGroupDesc").trim());
+
+            } catch (Exception failed) {
+
+                if (null != defaults) {
+
+                    Logging.logCheckedFine(LOG, "NetPeerGroup tunables not defined or could not be loaded. Using defaults.\n\n", failed);
+
+                    idTmp = defaults.id;
+                    nameTmp = defaults.name;
+                    descTmp = defaults.desc;
+
+                } else {
+
+                    Logging.logCheckedSevere(LOG, "NetPeerGroup tunables not defined or could not be loaded.\n", failed);
+                    throw new IllegalStateException("NetPeerGroup tunables not defined or could not be loaded.");
+
+                }
+            }
+
+            id = idTmp;
+            name = nameTmp;
+            desc = descTmp;
+        }
+        
+        /**
+         * Constructor for loading the Net Peer Group construction
+         * tunables from the provided Map which mimics a resource bundle.
+         *
+         * @param properties   The map in which resources are stored.
+         * @param defaults default values
+         */
+        NetGroupTunables(Map<String,String> properties, NetGroupTunables defaults) {
+            ID idTmp;
+            String nameTmp;
+            XMLElement descTmp;
+
+            try {
+                String idTmpStr = properties.get("NetPeerGroupID").trim();
+
+                if (idTmpStr.startsWith(ID.URNNamespace + ":")) {
+                    idTmpStr = idTmpStr.substring(5);
+                }
+                idTmp = IDFactory.fromURI(new URI(ID.URIEncodingName + ":" + ID.URNNamespace + ":" + idTmpStr));
+                nameTmp = properties.get("NetPeerGroupName").trim();
+                descTmp = (XMLElement) StructuredDocumentFactory.newStructuredDocument(MimeMediaType.XMLUTF8, "desc", properties.get("NetPeerGroupDesc").trim());
 
             } catch (Exception failed) {
 
