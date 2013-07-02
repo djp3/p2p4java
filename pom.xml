@@ -64,7 +64,7 @@ http://luci.ics.uci.edu
                         <Eclipse-BuddyPolicy>registered</Eclipse-BuddyPolicy>
                         <!-- Needs a bit more thought before enabling
                         <Bundle-Activator>
-                            net.jxse.OSGi.Services.JxseOSGiNetworkManagerService
+                            edu.uci.ics.luci.jxse.OSGi.Services.JxseOSGiNetworkManagerService
                         </Bundle-Activator>
                         -->
                         <Export-Package>
@@ -342,7 +342,7 @@ http://luci.ics.uci.edu
 
                         <!-- We exclude Impl Javadoc
                       <configuration>
-                          <excludePackageNames>net.jxta.impl</excludePackageNames>
+                          <excludePackageNames>edu.uci.ics.luci.p2p4java.impl</excludePackageNames>
                       </configuration>  -->
 
                     </plugin>
@@ -422,7 +422,7 @@ http://luci.ics.uci.edu
 
                         <!-- We exclude Impl Javadoc
                         <configuration>
-                          <excludePackageNames>net.jxta.impl</excludePackageNames>
+                          <excludePackageNames>edu.uci.ics.luci.p2p4java.impl</excludePackageNames>
                         </configuration>  -->
 
                     </plugin>
