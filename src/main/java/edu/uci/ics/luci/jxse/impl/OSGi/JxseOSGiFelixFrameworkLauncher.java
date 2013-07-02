@@ -56,7 +56,7 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.impl.OSGi;
+package edu.uci.ics.luci.jxse.impl.OSGi;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -66,13 +66,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.jxse.JxseInstantiator;
-import net.jxse.OSGi.JxseOSGiFrameworkLauncher;
 import net.jxta.configuration.JxtaConfiguration;
 import net.jxta.configuration.PropertiesUtil;
 import org.apache.felix.framework.Felix;
 import org.apache.felix.framework.util.FelixConstants;
 import org.osgi.framework.launch.Framework;
+
+import edu.uci.ics.luci.jxse.JxseInstantiator;
+import edu.uci.ics.luci.jxse.OSGi.JxseOSGiFrameworkLauncher;
 
 /**
  * Felix OSGi framework launcher.

@@ -54,7 +54,7 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.service;
+package edu.uci.ics.luci.jxse.service;
 
 /**
  * API Abstraction for the module concept in JXSE, the Java implementation of JXTA.

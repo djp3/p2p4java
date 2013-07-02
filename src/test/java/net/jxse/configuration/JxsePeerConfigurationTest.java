@@ -66,7 +66,6 @@ import java.net.URI;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Map;
 import java.util.Properties;
-import net.jxse.configuration.JxsePeerConfiguration.ConnectionMode;
 import net.jxta.id.IDFactory;
 import net.jxta.peer.PeerID;
 import net.jxta.peergroup.PeerGroupID;
@@ -75,6 +74,13 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import edu.uci.ics.luci.jxse.configuration.JxseHttp2TransportConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxseHttpTransportConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxseMulticastTransportConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxseTcpTransportConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration.ConnectionMode;
 import static org.junit.Assert.*;
 
 /**

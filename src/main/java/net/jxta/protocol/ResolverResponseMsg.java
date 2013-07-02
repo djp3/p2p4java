@@ -55,7 +55,7 @@
  */
 package net.jxta.protocol;
 
-import net.jxse.JxseInstantiator;
+import edu.uci.ics.luci.jxse.JxseInstantiator;
 import net.jxta.document.Document;
 import net.jxta.document.MimeMediaType;
 import net.jxta.document.StructuredDocument;

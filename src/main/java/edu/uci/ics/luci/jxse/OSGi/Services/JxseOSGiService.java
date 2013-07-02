@@ -56,25 +56,14 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.OSGi;
-
-import org.osgi.framework.launch.Framework;
+package edu.uci.ics.luci.jxse.OSGi.Services;
 
 /**
- * Contract for implementation of Jxse OSGi framework launchers.
- * <p>These should perform necessary actions to create the Jxse OSGi framework
- * instance and provide it via the {@code getOsgiFrameworkInstance()} method. These
- * instances do not need to be initialized or started.
+ * API representation of an OSGi service in the JXSE framework.
  *
+ * @since 2.6 Do not rely on this interface for your application as
+ * further work is expected on this API
  */
-public interface JxseOSGiFrameworkLauncher {
-
-    /**
-     * Provides the OSGi framework object instance (unstarted and uninitialized
-     * when called for the first time).
-     * 
-     * @return an OSGi framework object instance
-     */
-    public Framework getOsgiFrameworkInstance();
+public abstract class JxseOSGiService {
 
 }

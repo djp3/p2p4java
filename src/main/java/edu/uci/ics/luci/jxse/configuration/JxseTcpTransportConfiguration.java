@@ -55,7 +55,7 @@
  *
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
-package net.jxse.configuration;
+package edu.uci.ics.luci.jxse.configuration;
 
 import java.util.logging.Logger;
 import net.jxta.configuration.JxtaTransportConfiguration;

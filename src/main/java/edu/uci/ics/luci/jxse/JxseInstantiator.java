@@ -54,7 +54,7 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse;
+package edu.uci.ics.luci.jxse;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

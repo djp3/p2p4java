@@ -57,6 +57,8 @@
 package net.jxse.configuration;
 
 import java.util.logging.Logger;
+
+import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration;
 import net.jxta.id.IDFactory;
 import net.jxta.peer.PeerID;
 import net.jxta.peergroup.PeerGroupID;

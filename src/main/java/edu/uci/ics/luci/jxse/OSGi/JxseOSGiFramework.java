@@ -56,16 +56,17 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.OSGi;
+package edu.uci.ics.luci.jxse.OSGi;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.jxse.JxseInstantiator;
 import net.jxta.configuration.JxtaConfiguration;
 import org.osgi.framework.launch.Framework;
 import org.osgi.util.tracker.ServiceTracker;
+
+import edu.uci.ics.luci.jxse.JxseInstantiator;
 
 /**
  * API access to the OSGi Framework.

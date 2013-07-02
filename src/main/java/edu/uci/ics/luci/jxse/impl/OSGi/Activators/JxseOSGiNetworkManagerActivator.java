@@ -56,14 +56,15 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.impl.OSGi.Activators;
+package edu.uci.ics.luci.jxse.impl.OSGi.Activators;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.jxse.OSGi.Services.JxseOSGiNetworkManagerService;
-import net.jxse.impl.OSGi.Services.JxseOSGiNetworkManagerServiceImpl;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+
+import edu.uci.ics.luci.jxse.OSGi.Services.JxseOSGiNetworkManagerService;
+import edu.uci.ics.luci.jxse.impl.OSGi.Services.JxseOSGiNetworkManagerServiceImpl;
 
 /**
  * This OSGi activator create the {@code NetworkManager} service instance and

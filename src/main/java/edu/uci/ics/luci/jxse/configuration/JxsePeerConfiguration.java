@@ -56,7 +56,7 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.configuration;
+package edu.uci.ics.luci.jxse.configuration;
 
 import java.io.IOException;
 import java.io.InputStream;

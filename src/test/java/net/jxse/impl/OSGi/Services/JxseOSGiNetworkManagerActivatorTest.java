@@ -60,13 +60,6 @@ import net.jxse.configuration.ValidJxsePeerConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
-import net.jxse.OSGi.Services.JxseOSGiNetworkManagerService;
-import net.jxse.OSGi.JxseOSGiFramework;
-import net.jxse.configuration.JxseHttpTransportConfiguration;
-import net.jxse.configuration.JxseMulticastTransportConfiguration;
-import net.jxse.configuration.JxsePeerConfiguration;
-import net.jxse.configuration.JxsePeerConfiguration.ConnectionMode;
-import net.jxse.configuration.JxseTcpTransportConfiguration;
 import net.jxta.configuration.JxtaConfigurationException;
 import net.jxta.exception.PeerGroupException;
 import net.jxta.id.IDFactory;
@@ -80,6 +73,14 @@ import static org.junit.Assert.*;
 import org.osgi.framework.BundleException;
 import org.osgi.framework.FrameworkEvent;
 import org.osgi.util.tracker.ServiceTracker;
+
+import edu.uci.ics.luci.jxse.OSGi.JxseOSGiFramework;
+import edu.uci.ics.luci.jxse.OSGi.Services.JxseOSGiNetworkManagerService;
+import edu.uci.ics.luci.jxse.configuration.JxseHttpTransportConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxseMulticastTransportConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxseTcpTransportConfiguration;
+import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration.ConnectionMode;
 
 /**
  * Test of JxseOSGiNetworkManager using OSGi

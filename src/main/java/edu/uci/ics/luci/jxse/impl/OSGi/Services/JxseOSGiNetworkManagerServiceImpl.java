@@ -56,13 +56,14 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.impl.OSGi.Services;
+package edu.uci.ics.luci.jxse.impl.OSGi.Services;
 
 import java.io.IOException;
 import java.util.logging.Logger;
-import net.jxse.OSGi.Services.JxseOSGiNetworkManagerService;
-import net.jxse.configuration.JxseConfigurationTool;
-import net.jxse.configuration.JxsePeerConfiguration;
+
+import edu.uci.ics.luci.jxse.OSGi.Services.JxseOSGiNetworkManagerService;
+import edu.uci.ics.luci.jxse.configuration.JxseConfigurationTool;
+import edu.uci.ics.luci.jxse.configuration.JxsePeerConfiguration;
 import net.jxta.configuration.JxtaConfigurationException;
 import net.jxta.platform.NetworkManager;
 

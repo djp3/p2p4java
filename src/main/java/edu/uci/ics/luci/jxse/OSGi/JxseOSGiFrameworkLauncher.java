@@ -56,52 +56,25 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.OSGi.Services;
+package edu.uci.ics.luci.jxse.OSGi;
 
-import java.util.logging.Logger;
-import net.jxse.configuration.JxsePeerConfiguration;
-import net.jxta.configuration.JxtaConfigurationException;
-import net.jxta.platform.NetworkManager;
+import org.osgi.framework.launch.Framework;
 
 /**
- * This API class declares the contract from which an instance
- * of the {@code NetworkManager} service can be obtained from OSGi.
+ * Contract for implementation of Jxse OSGi framework launchers.
+ * <p>These should perform necessary actions to create the Jxse OSGi framework
+ * instance and provide it via the {@code getOsgiFrameworkInstance()} method. These
+ * instances do not need to be initialized or started.
  *
- * <p>This JXSE OSGi service should be made available when
- * the OSGi framework is started and removed when the framework is
- * stopped. In other words, it should always be available while the
- * Jxse OSGi framework is active.
  */
-public abstract class JxseOSGiNetworkManagerService extends JxseOSGiService {
+public interface JxseOSGiFrameworkLauncher {
 
     /**
-     *  Logger
+     * Provides the OSGi framework object instance (unstarted and uninitialized
+     * when called for the first time).
+     * 
+     * @return an OSGi framework object instance
      */
-    private final static Logger LOG = Logger.getLogger(JxseOSGiNetworkManagerService.class.getName());
-
-    /**
-     * Set the peer configuration if the {@code NetworkManager} is not in a started status, else
-     * throws a {@code JxtaConfigurationException}.
-     *
-     * @param config The peer configuration.
-     * @throws JxtaConfigurationException if the {@code NetworkManager} is in a started status.
-     */
-    public abstract void setPeerConfiguration(JxsePeerConfiguration config) throws JxtaConfigurationException;
-
-    /**
-     * Returns a copy of the peer configuration or {@code null} if not available.
-     *
-     * @return a peer configuration or {@code null}.
-     */
-    public abstract JxsePeerConfiguration getPeerConfigurationCopy();
-
-    /**
-     * Returns the current instance of the {@code NetworkManager} if it is in a started status, else
-     * creates a new instance and configures it with the current peer configuration. 
-     *
-     * @return instance of a NetworkManager.
-     * @throws Exception if an issue is encountered while retrieving the {@code NetworkManager}.
-     */
-    public abstract NetworkManager getConfiguredNetworkManager() throws Exception;
+    public Framework getOsgiFrameworkInstance();
 
 }

@@ -1,7 +1,5 @@
 /*
- * ====================================================================
- *
- * Copyright (c) 2001 Sun Microsystems, Inc.  All rights reserved.
+ * Copyright (c) 2006-2007 Sun Microsystems, Inc.  All rights reserved.
  *
  *  The Sun Project JXTA(TM) Software License
  *
@@ -56,14 +54,16 @@
  *  This license is based on the BSD license adopted by the Apache Foundation.
  */
 
-package net.jxse.OSGi.Services;
+package edu.uci.ics.luci.jxse.service;
+
+import net.jxta.service.JxtaService;
 
 /**
- * API representation of an OSGi service in the JXSE framework.
+ * API Abstraction for the Service concept in JXSE, the Java implementation of JXTA
  *
- * @since 2.6 Do not rely on this interface for your application as
- * further work is expected on this API
+ * @since 2.6 Further work is expected on this interface in the coming releases.
+ * <p />Do not rely on this code for your applications !!!
  */
-public abstract class JxseOSGiService {
+public interface JxseService extends JxtaService, JxseModule {
 
 }

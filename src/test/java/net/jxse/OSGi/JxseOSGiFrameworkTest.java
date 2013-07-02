@@ -66,6 +66,8 @@ import org.osgi.framework.BundleException;
 import org.osgi.framework.FrameworkEvent;
 import org.osgi.util.tracker.ServiceTracker;
 
+import edu.uci.ics.luci.jxse.OSGi.JxseOSGiFramework;
+
 /**
  * To test the JxseOSGiFramework API class.
  */

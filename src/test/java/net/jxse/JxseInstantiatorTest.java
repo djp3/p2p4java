@@ -61,6 +61,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import edu.uci.ics.luci.jxse.JxseInstantiator;
 import static org.junit.Assert.*;
 
 /**
@@ -94,7 +96,7 @@ public class JxseInstantiatorTest {
     @Test
     public void testForName() {
 
-        Class FN = JxseInstantiator.forName("net.jxse.JxseInstantiatorDummyTestClass");
+        Class FN = JxseInstantiator.forName("edu.uci.ics.luci.jxse.JxseInstantiatorDummyTestClass");
 
         assertTrue(FN!=null);
         assertTrue(FN.getSimpleName().compareTo("JxseInstantiatorDummyTestClass")==0);
@@ -107,7 +109,7 @@ public class JxseInstantiatorTest {
     @Test
     public void testInstantiate() {
 
-        Class FN = JxseInstantiator.forName("net.jxse.JxseInstantiatorDummyTestClass");
+        Class FN = JxseInstantiator.forName("edu.uci.ics.luci.jxse.JxseInstantiatorDummyTestClass");
 
         Class[] Types = { };
         Object[] Values = new Object[0];
@@ -124,7 +126,7 @@ public class JxseInstantiatorTest {
     @Test
     public void testInstantiate_2() {
 
-        Class FN = JxseInstantiator.forName("net.jxse.JxseInstantiatorDummyTestClass");
+        Class FN = JxseInstantiator.forName("edu.uci.ics.luci.jxse.JxseInstantiatorDummyTestClass");
 
         Class[] Types = { int.class, boolean.class };
         Object[] Values = new Object[2];
@@ -143,7 +145,7 @@ public class JxseInstantiatorTest {
     @Test
     public void testInstantiateWithNoParameterConstructor() {
 
-        Class FN = JxseInstantiator.forName("net.jxse.JxseInstantiatorDummyTestClass");
+        Class FN = JxseInstantiator.forName("edu.uci.ics.luci.jxse.JxseInstantiatorDummyTestClass");
 
         JxseInstantiatorDummyTestClass Result = (JxseInstantiatorDummyTestClass) JxseInstantiator.instantiateWithNoParameterConstructor(FN);
 
