@@ -192,10 +192,9 @@ public abstract class ClassFactory<K, I> {
      *         with this factory.
      */
     protected boolean registerProviders(String interfaceName) {
-        //ClassLoader loader = getClass().getClassLoader();
         boolean registeredSomething = false;
 
-       	List<String> providers = P2p4Android.getServices(interfaceName);
+       	List<String> providers = P2p4Java.getServices(interfaceName);
        	for(String provider: providers){
        		try{
        			registeredSomething |= registerAssoc(provider);
@@ -205,23 +204,6 @@ public abstract class ClassFactory<K, I> {
        			Logging.logCheckedWarning(LOG, "Failed to convert service URI", e);
        		}
        	}
-        	/*
-            Enumeration<URL> providerLists = loader.getResources("META-INF/services/" + interfaceName);
-
-            while (providerLists.hasMoreElements()) {
-
-                try {
-
-                    URI providerList = providerLists.nextElement().toURI();
-                    registeredSomething |= registerFromFile(providerList);
-
-                } catch (URISyntaxException badURI) {
-
-                    Logging.logCheckedWarning(LOG, "Failed to convert service URI", badURI);
-
-                }
-
-            }*/
         return registeredSomething;
     }
 
