@@ -1,4 +1,0 @@
-# The list of Content Provider Instance Classes included with this distribution.
-# Used by ContentServiceImpl
-edu.uci.ics.luci.p2p4java.impl.content.defprovider.DefaultContentProvider
-edu.uci.ics.luci.p2p4java.impl.content.srdisocket.SRDISocketContentProvider

@@ -1,3 +1,0 @@
-# The list of MessageWireFormat Instance Classes included in this distribution.
-# Used by MessageWireFormatFactory.
-edu.uci.ics.luci.p2p4java.impl.endpoint.WireFormatMessageBinary

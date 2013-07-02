@@ -1,4 +1,0 @@
-# The list of StructuredDocument Instance Classes included in this distribution.
-# Used by StructuredDocumentFactory.
-edu.uci.ics.luci.p2p4java.impl.document.PlainTextDocument
-edu.uci.ics.luci.p2p4java.impl.document.LiteXMLDocument

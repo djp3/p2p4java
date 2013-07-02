@@ -1,4 +1,0 @@
-# List of ID types supported.
-edu.uci.ics.luci.p2p4java.impl.id.UUID.IDFormat
-edu.uci.ics.luci.p2p4java.impl.id.CBID.IDFormat
-edu.uci.ics.luci.p2p4java.impl.id.binaryID.IDFormat
