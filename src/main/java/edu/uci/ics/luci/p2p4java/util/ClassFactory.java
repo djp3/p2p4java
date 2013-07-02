@@ -192,10 +192,20 @@ public abstract class ClassFactory<K, I> {
      *         with this factory.
      */
     protected boolean registerProviders(String interfaceName) {
-        ClassLoader loader = getClass().getClassLoader();
+        //ClassLoader loader = getClass().getClassLoader();
         boolean registeredSomething = false;
 
-        try {
+       	List<String> providers = P2p4Android.getServices(interfaceName);
+       	for(String provider: providers){
+       		try{
+       			registeredSomething |= registerAssoc(provider);
+       		} catch (URISyntaxException badURI) {
+       			Logging.logCheckedWarning(LOG, "Failed to convert service URI", badURI);
+       		} catch (Exception e) {
+       			Logging.logCheckedWarning(LOG, "Failed to convert service URI", e);
+       		}
+       	}
+        	/*
             Enumeration<URL> providerLists = loader.getResources("META-INF/services/" + interfaceName);
 
             while (providerLists.hasMoreElements()) {
@@ -211,14 +221,7 @@ public abstract class ClassFactory<K, I> {
 
                 }
 
-            }
-
-        } catch (IOException ex) {
-
-            Logging.logCheckedWarning(LOG, "Failed to locate provider lists\n", ex);
-
-        }
-
+            }*/
         return registeredSomething;
     }
 
@@ -286,7 +289,7 @@ public abstract class ClassFactory<K, I> {
      *  Register a class with the factory from its class name. Since class name
      *  doesn't tell us much, we just load the class and hope that something
      *  happens as a result of the class loading. This class is often overridden
-     *  in class factories to interogate the instance class before registering
+     *  in class factories to interrogate the instance class before registering
      *  the instance class.
      *
      *  @param className The class name which will be registered.
@@ -303,7 +306,7 @@ public abstract class ClassFactory<K, I> {
              * itself as part of class initialization.
              */
 
-            Class ignored = Class.forName(className);
+            Class.forName(className); // Try and trigger an exception
             registeredSomething = true;
 
         } catch (ClassNotFoundException ignored) {
