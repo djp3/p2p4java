@@ -32,5 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="lib/bcprov-ext-jdk15on-147.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
