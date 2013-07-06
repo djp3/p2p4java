@@ -15,6 +15,12 @@
 http://luci.ics.uci.edu
 	</description>
 
+	<scm>
+		<connection>scm:git:git@github.com:djp3/p2p4java.git</connection>
+		<developerConnection>scm:git:git@github.com:djp3/p2p4java.git</developerConnection>
+        <url>git@github.com:djp3/p2p4java.git</url>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -129,11 +135,6 @@ http://luci.ics.uci.edu
 
 	<dependencies>
 
-        <dependency>
-            <groupId>bouncycastle</groupId>
-            <artifactId>bcprov-jdk15</artifactId>
-            <version>140</version>
-        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>

@@ -56,9 +56,6 @@
 
 package edu.uci.ics.luci.p2p4java.impl.membership.pse;
 
-import javax.crypto.EncryptedPrivateKeyInfo;
-import java.security.PrivateKey;
-import java.util.Arrays;
 import java.util.Map;
 
 import junit.framework.*;
@@ -74,10 +71,6 @@ import edu.uci.ics.luci.p2p4java.document.Element;
 import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
 import edu.uci.ics.luci.p2p4java.document.XMLDocument;
 import edu.uci.ics.luci.p2p4java.id.IDFactory;
-import edu.uci.ics.luci.p2p4java.impl.membership.pse.PSEMembershipService;
-import edu.uci.ics.luci.p2p4java.impl.membership.pse.PSEUtils;
-import edu.uci.ics.luci.p2p4java.impl.membership.pse.StringAuthenticator;
-import edu.uci.ics.luci.p2p4java.impl.membership.pse.PSEUtils.IssuerInfo;
 import edu.uci.ics.luci.p2p4java.impl.peergroup.StdPeerGroupParamAdv;
 import edu.uci.ics.luci.p2p4java.impl.protocol.PSEConfigAdv;
 import edu.uci.ics.luci.p2p4java.membership.MembershipService;
@@ -248,38 +241,4 @@ public class pseMembershipTest extends TestCase {
     // }
     // }
 
-    public void testPKCS5() {
-        try {
-            IssuerInfo test = PSEUtils.genCert("test", null);
-
-            EncryptedPrivateKeyInfo encPrivKey = PSEUtils.pkcs5_Encrypt_pbePrivateKey("password".toCharArray(), test.subjectPkey
-                    ,
-                    500);
-
-            assertNotNull("Could not encrypt Private Key", encPrivKey);
-
-            PrivateKey decPrivKey = PSEUtils.pkcs5_Decrypt_pbePrivateKey("password".toCharArray(), test.subjectPkey.getAlgorithm()
-                    ,
-                    encPrivKey);
-
-            assertNotNull("Could not decrypt Private Key", decPrivKey);
-
-            Arrays.equals(test.subjectPkey.getEncoded(), decPrivKey.getEncoded());
-
-            byte[] encPrivKeyDer = encPrivKey.getEncoded();
-
-            EncryptedPrivateKeyInfo deserialedencPrivKey = new EncryptedPrivateKeyInfo(encPrivKeyDer);
-
-            decPrivKey = PSEUtils.pkcs5_Decrypt_pbePrivateKey("password".toCharArray(), test.subjectPkey.getAlgorithm()
-                    ,
-                    deserialedencPrivKey);
-
-            assertNotNull("Could not decrypt Private Key", decPrivKey);
-
-            Arrays.equals(test.subjectPkey.getEncoded(), decPrivKey.getEncoded());
-        } catch (Exception caught) {
-            caught.printStackTrace();
-            fail("exception thrown : " + caught.getMessage());
-        }
-    }
 }
