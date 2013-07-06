@@ -1,0 +1,4 @@
+v0.1.3
+	Debugged the Personal Security Environment to use a supported encryption
+	algorithm on the Android phone (e.g., in BouncyCastle 1.47)
+
