@@ -511,7 +511,13 @@ public final class PSEUtils {
     /**
      * We are trying to use : PBEWITHMD5ANDDES
      */
-    static final String PKCS5_PBSE1_ALGO = "PBEWITHMD5ANDDES";
+    //static final String PKCS5_PBSE1_ALGO = "PBEWITHMD5ANDDES";        //Didn't work on phone
+    //static final String PKCS5_PBSE1_ALGO = "PBEWithSHA1AndDES";       //Didn't work on phone
+    //static final String PKCS5_PBSE1_ALGO = "PBEWithSHAAndDES2Key";    //Didn't work on phone
+    //static final String PKCS5_PBSE1_ALGO = "PBEWithSHA1AndDES";       //Didn't work on phone
+    //static final String PKCS5_PBSE1_ALGO = "1.2.840.113549.1.12.1.3"; // 3 key triple DES with SHA-1
+    static final String PKCS5_PBSE1_ALGO = "1.2.840.113549.1.12.1.5";   // "PBEWITHSHAAND128BITRC2-CBC"
+
 
     /**
      * Given a private key and a password, encrypt the private key using the
