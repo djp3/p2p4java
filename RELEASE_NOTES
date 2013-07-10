@@ -1,3 +1,6 @@
+v0.1.5
+	Got all the errors fixed so a client comes up cleanly.
+	
 v0.1.4
 	Hacked a check for compatible Java versions that doesn't work on Android
 	Fixed a resource problem that was preventing the demo program from running
