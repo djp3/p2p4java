@@ -27,20 +27,8 @@ http://luci.ics.uci.edu
 
     <repositories>
         <repository>
-            <!-- Repository needed to include the jboss netty library -->
-            <id>repository.jboss.org</id>
-            <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
             <id>mvn2</id>
             <url>http://repo2.maven.org/maven2/</url>
-        </repository>
-        <repository>
-            <id>repository.httptunnel</id>
-            <url>https://bitbucket.org/iainmcgin/netty-httptunnel/raw/tip/repo</url>
         </repository>
     </repositories>
 
@@ -164,17 +152,6 @@ http://luci.ics.uci.edu
             <artifactId>org.mortbay.jetty</artifactId>
             <version>4.2.25</version>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.netty</groupId>
-            <artifactId>netty</artifactId>
-            <version>3.2.2.Final</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.netty</groupId>
-            <artifactId>httptunnel</artifactId>
-            <version>0.92</version>
         </dependency>
         <dependency>
             <groupId>org.apache.derby</groupId>
