@@ -103,7 +103,7 @@ import edu.uci.ics.luci.p2p4java.logging.Logging;
 import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
 import edu.uci.ics.luci.p2p4java.protocol.PeerGroupAdvertisement;
 import edu.uci.ics.luci.p2p4java.protocol.SrdiMessage;
-import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
+import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
 
 /**
  * This is the original Cm implementation.
@@ -225,7 +225,7 @@ public class XIndiceAdvertisementCache extends AbstractAdvertisementCache implem
             rootDir = new File(new File(ROOTDIRBASE, areaName).getAbsolutePath());
             if (!rootDir.exists()) {
                 // We need to create the directory
-                if (!rootDir.mkdirs()) {
+                if (!rootDir.mkdirs() && !rootDir.isDirectory()) {
                     throw new IOException("Cm cannot create directory " + rootDir);
                 }
             }
@@ -236,7 +236,7 @@ public class XIndiceAdvertisementCache extends AbstractAdvertisementCache implem
              * operation.  In transitory caches such as SrdiCache it makes perfect sense
              */
             boolean chkPoint = true;
-            ResourceBundle jxtaRsrcs = P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.user");
+            ResourceBundle jxtaRsrcs = P2P4Java.getBundle("edu.uci.ics.luci.p2p4java.user");
             String checkpointStr = jxtaRsrcs.getString("impl.cm.defferedcheckpoint");
 
             if (checkpointStr != null) {
