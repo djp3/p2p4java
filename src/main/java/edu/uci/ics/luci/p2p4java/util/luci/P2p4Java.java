@@ -1,10 +1,62 @@
 package edu.uci.ics.luci.p2p4java.util.luci;
 
+import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public class P2p4Java {
+public class P2P4Java {
+	
+	private static String runtime = System.getProperty("java.runtime.name");
+	
+	public static boolean isAndroid(){
+		return runtime.equals("Android Runtime");
+	}
+
+	private static Object context = null;
+	
+	public static void setContext(Object _context){
+		if(!isAndroid()){
+			throw new RuntimeException("There is no need to set Context if you aren't running on Android");
+		}
+		else{
+			context = _context;
+		}
+	}
+
+	public static File getCacheDirectory() {
+		if(isAndroid()){
+			if(context == null){
+				throw new RuntimeException("Initialize Android Context before calling getCacheDirectory");
+			}
+			else{
+				try{
+					Method method = context.getClass().getMethod("getCacheDir", (Class<?>[]) null);
+					if(method != null){
+						return (File) method.invoke(context,(Object []) null);
+					}
+					else{
+						throw new RuntimeException("Problem with Android Context, getCacheDir method not present");
+					}
+				} catch (NoSuchMethodException e) {
+					throw new RuntimeException("Problem with Android Context "+e);
+				} catch (IllegalArgumentException e) {
+					throw new RuntimeException("Problem with Android Context "+e);
+				} catch (IllegalAccessException e) {
+					throw new RuntimeException("Problem with Android Context "+e);
+				} catch (InvocationTargetException e) {
+					throw new RuntimeException("Problem with Android Context "+e);
+				}
+			}
+		}
+		else{
+            return new File(".cache");
+		}
+	}
+
+	
 
 	public static List<String> getResources(String interfaceName) throws IOException {
 		List<String> ret = new ArrayList<String>();
