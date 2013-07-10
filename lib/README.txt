@@ -5,7 +5,9 @@ This is what is in this directory on a working distribution
 			Bouncy Castle Cryptography Library
 			Android provides Bouncy Castle 1.47 natively (as of today anyway 7/5/2013)
 			bcprov-ext-jdk15on-147.jar
+
+		FindBugs (To make annotations compile)
+			annotations.jar
+			jsr305.jar
 			
 	jars without a well described pedigree:
-
-
