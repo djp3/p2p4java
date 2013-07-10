@@ -56,6 +56,27 @@
 
 package edu.uci.ics.luci.p2p4java.platform;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+import java.security.PrivateKey;
+import java.security.cert.X509Certificate;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Map;
+import java.util.MissingResourceException;
+import java.util.NoSuchElementException;
+import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
+import java.util.Set;
+import java.util.logging.Logger;
+
 import javax.security.cert.CertificateException;
 
 import edu.uci.ics.luci.p2p4java.document.Advertisement;
@@ -77,37 +98,16 @@ import edu.uci.ics.luci.p2p4java.impl.protocol.PSEConfigAdv;
 import edu.uci.ics.luci.p2p4java.impl.protocol.PeerGroupConfigAdv;
 import edu.uci.ics.luci.p2p4java.impl.protocol.PlatformConfig;
 import edu.uci.ics.luci.p2p4java.impl.protocol.RdvConfigAdv;
+import edu.uci.ics.luci.p2p4java.impl.protocol.RdvConfigAdv.RendezVousConfiguration;
 import edu.uci.ics.luci.p2p4java.impl.protocol.RelayConfigAdv;
 import edu.uci.ics.luci.p2p4java.impl.protocol.TCPAdv;
-import edu.uci.ics.luci.p2p4java.impl.protocol.RdvConfigAdv.RendezVousConfiguration;
 import edu.uci.ics.luci.p2p4java.logging.Logging;
 import edu.uci.ics.luci.p2p4java.peer.PeerID;
 import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
 import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 import edu.uci.ics.luci.p2p4java.protocol.ConfigParams;
 import edu.uci.ics.luci.p2p4java.protocol.TransportAdvertisement;
-import edu.uci.ics.luci.p2p4java.util.P2p4Java;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
-import java.security.PrivateKey;
-import java.security.cert.X509Certificate;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Map;
-import java.util.MissingResourceException;
-import java.util.NoSuchElementException;
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
-import java.util.Set;
-import java.util.logging.Logger;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
 
 /**
  * NetworkConfigurator provides a simple programmatic interface for JXTA configuration.

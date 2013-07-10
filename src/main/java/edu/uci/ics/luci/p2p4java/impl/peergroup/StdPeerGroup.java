@@ -999,7 +999,7 @@ public class StdPeerGroup extends GenericPeerGroup {
         synchronized (StdPeerGroup.class) {
             if (defaultPSEMembershipServiceKeystoreInfoFactory == null)
                 defaultPSEMembershipServiceKeystoreInfoFactory = newPSEMembershipServiceKeystoreInfoFactory;
-}
+        }
     }
     /**
      *  A factory for PSE Peer Validation Engines.

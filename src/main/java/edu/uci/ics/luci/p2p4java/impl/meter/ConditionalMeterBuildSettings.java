@@ -60,6 +60,8 @@ package edu.uci.ics.luci.p2p4java.impl.meter;
 
 import java.util.ResourceBundle;
 
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
+
 /**
  * This class is used to extract runtime metering code configuration.
  *
@@ -80,7 +82,7 @@ public class ConditionalMeterBuildSettings {
         boolean runtimeMetering = false;
 
         try {
-                ResourceBundle userResourceBundle = ResourceBundle.getBundle( "edu.uci.ics.luci.p2p4java.user" );
+                ResourceBundle userResourceBundle = P2p4Java.getBundle( "edu.uci.ics.luci.p2p4java.user" );
                 String meteringProperty = "edu.uci.ics.luci.p2p4java.meter.conditionalMetering";
                 String meteringValue = userResourceBundle.getString( meteringProperty );
                 runtimeMetering = "on".equalsIgnoreCase( meteringValue );

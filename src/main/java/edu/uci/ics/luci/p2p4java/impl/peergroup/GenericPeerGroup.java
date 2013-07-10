@@ -686,7 +686,9 @@ public abstract class GenericPeerGroup implements PeerGroup {
                 Logging.logCheckedSevere(LOG,ex);
 
                 try {
-                    newMod.stopApp();
+                	if(newMod != null){
+                		newMod.stopApp();
+                	}
                 } catch (Throwable ignored) {
                 // If this does not work, nothing needs to be done.
                 }

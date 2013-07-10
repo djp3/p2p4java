@@ -137,7 +137,7 @@ public class SimpleACLAccessServiceTest extends TestCase {
                     } else {
                         try {
                             ID simpleACLGrpModSpecID = ID.create(
-                                    new URI(ID.URIEncodingName, "jxta:uuid-" + "DeadBeefDeafBabaFeedBabe000000010406", null));
+                                    new URI(ID.URIEncodingName, "jxta:uuid-" + "DEADBEEFDEAFBABAFEEDBABE000000010406", null));
 
                             newGroupImpl.setModuleSpecID((ModuleSpecID) simpleACLGrpModSpecID);
                         } catch (URISyntaxException absurd) {// Fall through.

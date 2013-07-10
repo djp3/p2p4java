@@ -57,6 +57,23 @@
 package edu.uci.ics.luci.p2p4java.impl.endpoint.tls;
 
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.security.InvalidKeyException;
+import java.security.KeyStoreException;
+import java.security.SignatureException;
+import java.security.cert.X509Certificate;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.security.auth.x500.X500Principal;
 
 import edu.uci.ics.luci.p2p4java.document.Advertisement;
@@ -79,23 +96,7 @@ import edu.uci.ics.luci.p2p4java.peer.PeerID;
 import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
 import edu.uci.ics.luci.p2p4java.platform.Module;
 import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
-
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.security.InvalidKeyException;
-import java.security.KeyStoreException;
-import java.security.SignatureException;
-import java.security.cert.X509Certificate;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.MissingResourceException;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
 
 /**
  *  A JXTA {@link edu.uci.ics.luci.p2p4java.endpoint.MessageTransport} implementation which
@@ -196,7 +197,7 @@ public class TlsTransport implements Module, MessageSender, MessageReceiver {
 
         // initialize connection timeout
         try {
-            ResourceBundle jxtaRsrcs = ResourceBundle.getBundle("edu.uci.ics.luci.p2p4java.user");
+            ResourceBundle jxtaRsrcs = P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.user");
 
             try {
                 String override_str = jxtaRsrcs.getString("impl.endpoint.tls.connection.idletimeout");

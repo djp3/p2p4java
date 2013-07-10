@@ -103,6 +103,7 @@ import edu.uci.ics.luci.p2p4java.logging.Logging;
 import edu.uci.ics.luci.p2p4java.protocol.PeerAdvertisement;
 import edu.uci.ics.luci.p2p4java.protocol.PeerGroupAdvertisement;
 import edu.uci.ics.luci.p2p4java.protocol.SrdiMessage;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
 
 /**
  * This is the original Cm implementation.
@@ -235,7 +236,7 @@ public class XIndiceAdvertisementCache extends AbstractAdvertisementCache implem
              * operation.  In transitory caches such as SrdiCache it makes perfect sense
              */
             boolean chkPoint = true;
-            ResourceBundle jxtaRsrcs = ResourceBundle.getBundle("edu.uci.ics.luci.p2p4java.user");
+            ResourceBundle jxtaRsrcs = P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.user");
             String checkpointStr = jxtaRsrcs.getString("impl.cm.defferedcheckpoint");
 
             if (checkpointStr != null) {
