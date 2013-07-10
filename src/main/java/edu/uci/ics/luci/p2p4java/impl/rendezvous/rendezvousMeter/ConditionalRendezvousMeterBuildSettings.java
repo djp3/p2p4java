@@ -59,6 +59,8 @@ package edu.uci.ics.luci.p2p4java.impl.rendezvous.rendezvousMeter;
 
 import java.util.ResourceBundle;
 
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
+
 /**
  * This class is used to extract runtime rendezvous metering code configuration.
  *
@@ -79,7 +81,7 @@ public class ConditionalRendezvousMeterBuildSettings {
         boolean runtimeMetering = false;
 
         try {
-                ResourceBundle userResourceBundle = ResourceBundle.getBundle( "edu.uci.ics.luci.p2p4java.user" );
+                ResourceBundle userResourceBundle = P2p4Java.getBundle( "edu.uci.ics.luci.p2p4java.user" );
                 String meteringProperty = "edu.uci.ics.luci.p2p4java.meter.conditionalRendezvousMetering";
                 String meteringValue = userResourceBundle.getString( meteringProperty );
                 runtimeMetering = "on".equalsIgnoreCase( meteringValue );

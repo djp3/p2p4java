@@ -66,8 +66,12 @@ import javax.swing.JOptionPane;
  * @author  Me
  */
 public class Password extends javax.swing.JDialog {
-
-    /** Creates new form Password */
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -745867286375919407L;
+	
+	/** Creates new form Password */
     private Password(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.actionOK=new ActionOK("OK");
@@ -120,7 +124,7 @@ public class Password extends javax.swing.JDialog {
         {
             e.printStackTrace();
         }
-        return this.password;
+        return this.password.clone();
     }
     
     public void resetPassword()
@@ -130,7 +134,12 @@ public class Password extends javax.swing.JDialog {
     }
     private class ActionOK extends AbstractAction
     {
-        public ActionOK(String pName)
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = -5634350764812168152L;
+		
+		public ActionOK(String pName)
         {
             super(pName);
         }
@@ -141,7 +150,12 @@ public class Password extends javax.swing.JDialog {
     }
     private class ActionCancel extends AbstractAction
     {
-        public ActionCancel(String pName)
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 6456016977033938189L;
+		
+		public ActionCancel(String pName)
         {
             super(pName);
         }

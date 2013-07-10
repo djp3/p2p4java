@@ -106,7 +106,7 @@ public class PasswdMembershipService implements MembershipService {
      * Well known service specification identifier: password membership
      */
     public static final ModuleSpecID passwordMembershipSpecID = (ModuleSpecID)
-            ID.create(URI.create("urn:jxta:uuid-DeadBeefDeafBabaFeedBabe000000050206"));
+            ID.create(URI.create("urn:jxta:uuid-DEADBEEFDEAFBABAFEEDBABE000000050206"));
 
     /**
      * This class provides the sub-class of Credential which is associated

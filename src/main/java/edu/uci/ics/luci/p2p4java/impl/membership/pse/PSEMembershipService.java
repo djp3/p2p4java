@@ -138,7 +138,7 @@ public final class PSEMembershipService implements MembershipService {
      * Well known service specification identifier: pse membership
      */
     public final static ModuleSpecID pseMembershipSpecID = (ModuleSpecID) ID.create(
-            URI.create(ID.URIEncodingName + ":" + ID.URNNamespace + ":uuid-DeadBeefDeafBabaFeedBabe000000050306"));
+            URI.create(ID.URIEncodingName + ":" + ID.URNNamespace + ":uuid-DEADBEEFDEAFBABAFEEDBABE000000050306"));
 
     /**
      * the peergroup to which this service is associated.

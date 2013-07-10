@@ -229,7 +229,13 @@ public final class CompatibilityUtils {
                         version = null;
                     }
 
-                    formatOk = specMatches && javaLangPackage.isCompatibleWith(version);
+                    //Android gives a meaningless Package
+                    if(javaLangPackage.getSpecificationVersion().equals("0.0")){
+                    	formatOk = specMatches;
+                    }
+                    else{
+                    	formatOk = specMatches && javaLangPackage.isCompatibleWith(version);
+                    }
 
                 } else if (STD_COMPAT_BINDING.equals(key) && STD_COMPAT_BINDING_VALUE.equals(val)) {
 

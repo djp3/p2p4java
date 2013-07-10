@@ -319,7 +319,7 @@ public interface PeerGroup extends Service {
     /**
      * Prefix string for all of the Well Known IDs declared in this interface.
      */
-    static final String WK_ID_PREFIX = ID.URIEncodingName + ":" + ID.URNNamespace + ":uuid-DeadBeefDeafBabaFeedBabe";
+    static final String WK_ID_PREFIX = ID.URIEncodingName + ":" + ID.URNNamespace + ":uuid-DEADBEEFDEAFBABAFEEDBABE";
 
     /**
      * Well known module class identifier: peer group

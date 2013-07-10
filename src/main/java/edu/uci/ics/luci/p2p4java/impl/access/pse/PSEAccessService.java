@@ -110,7 +110,7 @@ public class PSEAccessService implements AccessService {
      * Well known access specification identifier: the pse access service
      */
     public final static ModuleSpecID PSE_ACCESS_SPEC_ID = (ModuleSpecID)
-            ID.create(URI.create("urn:jxta:uuid-DeadBeefDeafBabaFeedBabe000000100306"));
+            ID.create(URI.create("urn:jxta:uuid-DEADBEEFDEAFBABAFEEDBABE000000100306"));
 
     /**
      *  Operation for the PSE Access Service.

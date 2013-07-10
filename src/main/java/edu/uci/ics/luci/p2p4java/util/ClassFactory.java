@@ -64,11 +64,21 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.MissingResourceException;
+import java.util.NoSuchElementException;
+import java.util.ResourceBundle;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.uci.ics.luci.p2p4java.logging.Logging;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
 
 /**
  * This util class provides methods needed by class construction factories.
@@ -146,7 +156,7 @@ public abstract class ClassFactory<K, I> {
      *  property cannot be located.
      */
     protected boolean registerFromResources(String resourceName, String propertyName) throws MissingResourceException {
-        ResourceBundle jxtaRsrcs = ResourceBundle.getBundle(resourceName);
+        ResourceBundle jxtaRsrcs = P2p4Java.getBundle(resourceName);
         String fromProps = jxtaRsrcs.getString(propertyName).trim();
 
         return registerFromString(fromProps);
@@ -194,16 +204,25 @@ public abstract class ClassFactory<K, I> {
     protected boolean registerProviders(String interfaceName) {
         boolean registeredSomething = false;
 
-       	List<String> providers = P2p4Java.getServices(interfaceName);
-       	for(String provider: providers){
-       		try{
-       			registeredSomething |= registerAssoc(provider);
-       		} catch (URISyntaxException badURI) {
-       			Logging.logCheckedWarning(LOG, "Failed to convert service URI", badURI);
-       		} catch (Exception e) {
-       			Logging.logCheckedWarning(LOG, "Failed to convert service URI", e);
-       		}
-       	}
+        try {
+            List<String> providers = P2p4Java.getResources("META-INF/services/" + interfaceName);
+
+            for(String provider: providers){
+           		try{
+           			registeredSomething |= registerAssoc(provider);
+           		} catch (URISyntaxException badURI) {
+           			Logging.logCheckedWarning(LOG, "Failed to convert service URI", badURI);
+           		} catch (Exception e) {
+           			Logging.logCheckedWarning(LOG, "Failed to convert service URI", e);
+           		}
+           	}
+
+        } catch (IOException ex) {
+
+            Logging.logCheckedWarning(LOG, "Failed to locate provider lists\n", ex);
+
+        }
+
         return registeredSomething;
     }
 
@@ -220,10 +239,11 @@ public abstract class ClassFactory<K, I> {
     protected boolean registerFromFile(URI providerList) {
         boolean registeredSomething = false;
         InputStream urlStream = null;
+        BufferedReader reader = null;
 
         try {
             urlStream = providerList.toURL().openStream();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(urlStream, "UTF-8"));
+            reader = new BufferedReader(new InputStreamReader(urlStream, "UTF-8"));
 
             String provider;
 
@@ -258,6 +278,13 @@ public abstract class ClassFactory<K, I> {
             if(null != urlStream) {
                 try {
                     urlStream.close();
+                } catch(IOException ignored) {
+
+                }
+            }
+            if(reader != null) {
+                try {
+                    reader.close();
                 } catch(IOException ignored) {
 
                 }

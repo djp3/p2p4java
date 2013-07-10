@@ -129,7 +129,7 @@ public class SimpleACLAccessService implements AccessService {
      * Well known access specification identifier: the simple ACL access service
      */
     public static final ModuleSpecID simpleACLAccessSpecID = (ModuleSpecID)
-            ID.create(URI.create("urn:jxta:uuid-DeadBeefDeafBabaFeedBabe000000100206"));
+            ID.create(URI.create("urn:jxta:uuid-DEADBEEFDEAFBABAFEEDBABE000000100206"));
 
     /**
      *  Operation for the Always Access Service.

@@ -56,17 +56,39 @@
 package edu.uci.ics.luci.p2p4java.impl.loader;
 
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.*;
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import edu.uci.ics.luci.p2p4java.content.*;
+import edu.uci.ics.luci.p2p4java.content.Content;
+import edu.uci.ics.luci.p2p4java.content.ContentID;
+import edu.uci.ics.luci.p2p4java.content.ContentService;
+import edu.uci.ics.luci.p2p4java.content.ContentTransfer;
+import edu.uci.ics.luci.p2p4java.content.ContentTransferAggregator;
+import edu.uci.ics.luci.p2p4java.content.ContentTransferAggregatorEvent;
+import edu.uci.ics.luci.p2p4java.content.ContentTransferAggregatorListener;
+import edu.uci.ics.luci.p2p4java.content.ContentTransferEvent;
+import edu.uci.ics.luci.p2p4java.content.ContentTransferListener;
+import edu.uci.ics.luci.p2p4java.content.TransferException;
 import edu.uci.ics.luci.p2p4java.document.MimeMediaType;
 import edu.uci.ics.luci.p2p4java.document.StructuredDocument;
 import edu.uci.ics.luci.p2p4java.document.StructuredDocumentFactory;
@@ -81,6 +103,7 @@ import edu.uci.ics.luci.p2p4java.platform.JxtaLoader;
 import edu.uci.ics.luci.p2p4java.platform.Module;
 import edu.uci.ics.luci.p2p4java.platform.ModuleSpecID;
 import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
 
 /**
  * This class is the reference implementation of the JxtaLoader.
@@ -95,7 +118,7 @@ public class RefJxtaLoader extends JxtaLoader {
 
     /**
      * Maximum amount of time which will be allotted to the retrieval of
-     * remoge package Content items.
+     * remote package Content items.
      */
     private static final long MAX_XFER_TIME =
             Long.getLong(RefJxtaLoader.class.getName() + ".maxTransferTime",
@@ -184,7 +207,7 @@ public class RefJxtaLoader extends JxtaLoader {
      * @return the Class
      * @throws ClassNotFoundException if class not found
      */
-    protected Class loadClass(String name, URI uri) throws ClassNotFoundException {
+    protected Class<?> loadClass(String name, URI uri) throws ClassNotFoundException {
         return loadClass(name, uri, false);
     }
 
@@ -199,7 +222,7 @@ public class RefJxtaLoader extends JxtaLoader {
      * @return the class
      * @throws ClassNotFoundException if class not found
      */
-    protected Class loadClass(String name, URI uri, boolean resolve) throws ClassNotFoundException {
+    protected Class<?> loadClass(String name, URI uri, boolean resolve) throws ClassNotFoundException {
         try {
             // First, make sure we don't already have it loaded/loadable
             return loadClass(name, resolve);
@@ -260,7 +283,7 @@ public class RefJxtaLoader extends JxtaLoader {
      * fail to load the requested class.
      */
     @Override
-    protected Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
         /*
          * First, we ask the super-class.  This will consult the local
          * classes already laoded, the parent loader (if set), and the
@@ -277,7 +300,7 @@ public class RefJxtaLoader extends JxtaLoader {
          * The only thing left to try is the context loader.
          */
         ClassLoader contextLoader = Thread.currentThread().getContextClassLoader();
-        Class newClass = contextLoader.loadClass(name);
+        Class<?> newClass = contextLoader.loadClass(name);
         if (resolve) {
             resolveClass(newClass);
         }
@@ -368,7 +391,7 @@ public class RefJxtaLoader extends JxtaLoader {
         // Now try locally
         try {
 
-            Class found = findClass(spec);
+            Class<?> found = findClass(spec);
             Logging.logCheckedFinest(LOG, hashHex(), ": Self loaded: ", found);
 
             return verifyAndCast(found);
@@ -439,7 +462,7 @@ public class RefJxtaLoader extends JxtaLoader {
      * {@inheritDoc}
      */
     @Override
-    public ModuleImplAdvertisement findModuleImplAdvertisement(Class clazz) {
+    public ModuleImplAdvertisement findModuleImplAdvertisement(Class<? extends Module> clazz) {
         Class<? extends Module> modClass;
         try {
             modClass = verifyAndCast(clazz);
@@ -541,7 +564,7 @@ public class RefJxtaLoader extends JxtaLoader {
         for (Map.Entry<String, Class<? extends Module>> anEntry : compats.entrySet()) {
             String aCompat = anEntry.getKey();
 
-            StructuredDocument asDoc;
+            StructuredDocument<?> asDoc;
 
             try {
                 asDoc = StructuredDocumentFactory.newStructuredDocument(
@@ -560,6 +583,51 @@ public class RefJxtaLoader extends JxtaLoader {
 
         return null;
     }
+    
+    private ModuleImplAdvertisement createModuleImplAdvertisement( ModuleSpecID specID, String provider){
+    	
+		try {
+		    ModuleImplAdvertisement mAdv = null;
+		    String[] parts = provider.split("\\s", 3);
+	
+		    if (parts.length == 1) {
+	
+		        // Standard Jar SPI format:  Class name
+		        mAdv = locateModuleImplAdvertisement(parts[0]);
+	
+		    } else if (parts.length == 3) {
+	
+		        // Current non-standard format: MSID, Class name, Description
+		        ModuleSpecID msid = ModuleSpecID.create(URI.create(parts[0]));
+		        String code = parts[1];
+		        String description = parts[2];
+	
+		        if (!msid.equals(specID)) {
+		        	return null;
+		        }
+	
+		        mAdv = locateModuleImplAdvertisement(code);
+	
+		        if (mAdv == null) {
+		            // Create one
+		            mAdv = CompatibilityUtils.createModuleImplAdvertisement(msid, code, description);
+		        }
+	
+		    } else {
+	
+		        Logging.logCheckedWarning(LOG, hashHex(), ": Failed to register \'", provider, "\'");
+	
+		    }
+	
+		    if(mAdv != null){
+		    	return mAdv;
+		    }
+		} catch (Exception allElse) {
+		    Logging.logCheckedWarning(LOG, hashHex(), ": Failed to register \'", provider, "\'\n", allElse);
+		}
+		return null;
+	}
+
 
     /**
      * Attempt to locate implementations of the specified ModuleSpecID.
@@ -577,19 +645,16 @@ public class RefJxtaLoader extends JxtaLoader {
 
         try {
 
-            Enumeration<URL> allProviderLists = getResources("META-INF/services/edu.uci.ics.luci.p2p4java.platform.Module");
+            List<String> providerList = P2p4Java.getResources("META-INF/services/"+edu.uci.ics.luci.p2p4java.platform.Module.class.getCanonicalName());
 
-            for (URL providers : Collections.list(allProviderLists)) {
-
-                List<ModuleImplAdvertisement> located = locateModuleImplementations(msid, providers);
-
-                if (located != null) {
-                    if (locatedAdvs == null) {
-                        locatedAdvs = new ArrayList<ModuleImplAdvertisement>();
-                    }
-                    locatedAdvs.addAll(located);
-                }
-
+            for (String provider : providerList) {
+           		ModuleImplAdvertisement located = createModuleImplAdvertisement(msid, provider);
+           		if(located != null){
+           			if (locatedAdvs == null) {
+           				locatedAdvs = new ArrayList<ModuleImplAdvertisement>();
+           			}
+           			locatedAdvs.add(located);
+           		}
             }
 
         } catch (IOException ex) {
@@ -627,10 +692,11 @@ public class RefJxtaLoader extends JxtaLoader {
 
         Logging.logCheckedFinest(LOG, hashHex(), ": discoverModuleImplementations(MSID=", specID, ", URL=", providers, ")");
 
+        BufferedReader reader = null;
         try {
 
             urlStream = providers.openStream();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(urlStream, "UTF-8"));
+            reader = new BufferedReader(new InputStreamReader(urlStream, "UTF-8"));
 
             String provider;
 
@@ -646,56 +712,15 @@ public class RefJxtaLoader extends JxtaLoader {
                 if (0 == provider.length()) {
                     continue;
                 }
-
-                try {
-
-                    ModuleImplAdvertisement mAdv = null;
-                    String[] parts = provider.split("\\s", 3);
-
-                    if (parts.length == 1) {
-
-                        // Standard Jar SPI format:  Class name
-                        mAdv = locateModuleImplAdvertisement(parts[0]);
-
-                    } else if (parts.length == 3) {
-
-                        // Current non-standard format: MSID, Class name, Description
-                        ModuleSpecID msid = ModuleSpecID.create(URI.create(parts[0]));
-                        String code = parts[1];
-                        String description = parts[2];
-
-                        if (!msid.equals(specID)) {
-                            // Early-out here to prevent unnecessary work
-                            continue;
-                        }
-
-                        mAdv = locateModuleImplAdvertisement(code);
-
-                        if (mAdv == null) {
-                            // Create one
-                            mAdv = CompatibilityUtils.createModuleImplAdvertisement(msid, code, description);
-                        }
-
-                    } else {
-
-                        Logging.logCheckedWarning(LOG, hashHex(), ": Failed to register \'", provider, "\'");
-
-                    }
-
-                    if (mAdv != null) {
-                        if (result == null) {
-                            result = new ArrayList<ModuleImplAdvertisement>();
-                        }
-                        result.add(mAdv);
-                    }
-                } catch (Exception allElse) {
-
-                    Logging.logCheckedWarning(LOG, hashHex(), ": Failed to register \'", provider, "\'\n", allElse);
-
+                
+               	ModuleImplAdvertisement mAdv = createModuleImplAdvertisement(specID,provider);
+               	if(mAdv != null){
+               		if(result == null){
+               			result = new ArrayList<ModuleImplAdvertisement>();
+               		}
+               		result.add(mAdv);
                 }
-
             }
-
         } catch (IOException ex) {
 
             Logging.logCheckedWarning(LOG, hashHex(), ": Failed to read provider list ", providers, "\n", ex);
@@ -707,6 +732,12 @@ public class RefJxtaLoader extends JxtaLoader {
                 } catch (IOException ignored) {
 
                 }
+            }
+            if(reader != null){
+            	try {
+					reader.close();
+				} catch (IOException ignored) {
+				}
             }
         }
 
@@ -799,6 +830,7 @@ public class RefJxtaLoader extends JxtaLoader {
      * @throws ClassNotFoundException if the Content cannot be retrieved in a
      *  reasonable amount of time
      */
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE", justification="I don't care if file delete was not sucessful")
     private URI retrieveContent(ContentID contentID)
             throws ClassNotFoundException {
         if (group == null) {
@@ -904,13 +936,10 @@ public class RefJxtaLoader extends JxtaLoader {
             content = xfer.getContent();
 
         } catch (InterruptedException intx) {
-
             xfer.cancel();
             file.delete();
-            throw(new ClassNotFoundException("Thread was interrupted during transfer attempt", intx));
-
+           	throw(new ClassNotFoundException("Thread was interrupted during transfer attempt.", intx));
         } catch (TransferException xferx) {
-
             xfer.cancel();
             file.delete();
             throw(new ClassNotFoundException("Package Content transfer failed", xferx));
