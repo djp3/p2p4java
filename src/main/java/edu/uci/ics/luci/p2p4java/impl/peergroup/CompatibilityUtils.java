@@ -68,6 +68,7 @@ import edu.uci.ics.luci.p2p4java.document.XMLElement;
 import edu.uci.ics.luci.p2p4java.logging.Logging;
 import edu.uci.ics.luci.p2p4java.platform.ModuleSpecID;
 import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
+import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
 
 /**
  * General compatibility utility library for centralizing default
@@ -191,7 +192,7 @@ public final class CompatibilityUtils {
      * @return {@code true} if we are compatible with the provided statement
      *  otherwise {@code false}.
      */
-    public static boolean isCompatible(Element compat) {
+    public static boolean isCompatible(Element<?> compat) {
         boolean formatOk = false;
         boolean bindingOk = false;
 
@@ -200,7 +201,7 @@ public final class CompatibilityUtils {
         }
 
         try {
-            Enumeration<TextElement> hisChildren = ((TextElement)compat).getChildren();
+            Enumeration<?> hisChildren = ((TextElement<?>)compat).getChildren();
             int i = 0;
             while (hisChildren.hasMoreElements()) {
                 // Stop after 2 elements; there shall not be more.
@@ -208,7 +209,7 @@ public final class CompatibilityUtils {
                     return false;
                 }
 
-                TextElement e = hisChildren.nextElement();
+                TextElement<?> e = (TextElement<?>) hisChildren.nextElement();
                 String key = e.getKey();
                 String val = e.getValue().trim();
 
@@ -230,7 +231,7 @@ public final class CompatibilityUtils {
                     }
 
                     //Android gives a meaningless Package
-                    if(javaLangPackage.getSpecificationVersion().equals("0.0")){
+                    if(P2P4Java.isAndroid()){
                     	formatOk = specMatches;
                     }
                     else{

@@ -84,11 +84,6 @@ public class CMKeyStoreManager implements KeyStoreManager {
     private final static transient Logger LOG = Logger.getLogger(CMKeyStoreManager.class.getName());
 
     /**
-     *  Our default keystore type.
-     **/
-    private final static String DEFAULT_KEYSTORE_TYPE = "jks";
-
-    /**
      *  The keystore type
      **/
     private final String keystore_type;
@@ -126,7 +121,7 @@ public class CMKeyStoreManager implements KeyStoreManager {
     public CMKeyStoreManager(String type, String provider, PeerGroup group, ID location) throws NoSuchProviderException, KeyStoreException {
 
         if (null == type) {
-            type = DEFAULT_KEYSTORE_TYPE;
+            type = KeyStore.getDefaultType()  ;
             provider = null;
         }
 

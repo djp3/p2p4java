@@ -96,7 +96,7 @@ import edu.uci.ics.luci.p2p4java.peer.PeerID;
 import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
 import edu.uci.ics.luci.p2p4java.platform.Module;
 import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
-import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
+import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
 
 /**
  *  A JXTA {@link edu.uci.ics.luci.p2p4java.endpoint.MessageTransport} implementation which
@@ -197,7 +197,7 @@ public class TlsTransport implements Module, MessageSender, MessageReceiver {
 
         // initialize connection timeout
         try {
-            ResourceBundle jxtaRsrcs = P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.user");
+            ResourceBundle jxtaRsrcs = P2P4Java.getBundle("edu.uci.ics.luci.p2p4java.user");
 
             try {
                 String override_str = jxtaRsrcs.getString("impl.endpoint.tls.connection.idletimeout");

@@ -77,7 +77,7 @@ import edu.uci.ics.luci.p2p4java.impl.protocol.PeerGroupConfigAdv;
 import edu.uci.ics.luci.p2p4java.logging.Logging;
 import edu.uci.ics.luci.p2p4java.protocol.ConfigParams;
 import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
-import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
+import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
 
 /**
  * A factory for instantiating a Network Peer Group instances. The Network Peer
@@ -130,7 +130,7 @@ public final class NetPeerGroupFactory {
             PeerGroupConfigAdv netGroupConfig = (PeerGroupConfigAdv) cp.getSvcConfigAdvertisement(PeerGroup.peerGroupClassID);
 
             if (null == netGroupConfig) {
-                tunables = new NetGroupTunables(P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
+                tunables = new NetGroupTunables(P2P4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
                 // load overides from "${JXTA_HOME}config.properties".
                 URI storeHome = worldGroup.getStoreHome();
 
@@ -176,7 +176,7 @@ public final class NetPeerGroupFactory {
         NetGroupTunables tunables;
 
         if (null == netGroupConfig) {
-            tunables = new NetGroupTunables(P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
+            tunables = new NetGroupTunables(P2P4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
         } else {
             tunables = new NetGroupTunables(netGroupConfig.getPeerGroupID(), netGroupConfig.getName(), netGroupConfig.getDesc());
         }
@@ -210,7 +210,7 @@ public final class NetPeerGroupFactory {
             NetGroupTunables tunables;
 
             if (null == netGroupConfig) {
-                tunables = new NetGroupTunables(P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
+                tunables = new NetGroupTunables(P2P4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
             } else {
                 tunables = new NetGroupTunables(netGroupConfig.getPeerGroupID(), netGroupConfig.getName(), netGroupConfig.getDesc());
             }
@@ -264,7 +264,7 @@ public final class NetPeerGroupFactory {
         NetGroupTunables tunables;
 
         if (null == netGroupConfig) {
-            tunables = new NetGroupTunables(P2p4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
+            tunables = new NetGroupTunables(P2P4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
         } else {
             tunables = new NetGroupTunables(netGroupConfig.getPeerGroupID(), netGroupConfig.getName(), netGroupConfig.getDesc());
         }
