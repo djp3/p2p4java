@@ -21,6 +21,12 @@ http://luci.ics.uci.edu
         <url>git@github.com:djp3/p2p4java.git</url>
     </scm>
 
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -30,6 +36,10 @@ http://luci.ics.uci.edu
             <id>mvn2</id>
             <url>http://repo2.maven.org/maven2/</url>
         </repository>
+		<repository>
+			<id>sonatype</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
     </repositories>
 
 	<build>
@@ -140,6 +150,12 @@ http://luci.ics.uci.edu
             <version>2.0.1</version>
             <scope>provided</scope>
         </dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty</artifactId> <!-- Use 'netty-all' for 4.0 or above -->
+			<version>3.7.0.Final-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
         <!--
               The following dependencies are not always needed in normal
 			  p2p4java use,
