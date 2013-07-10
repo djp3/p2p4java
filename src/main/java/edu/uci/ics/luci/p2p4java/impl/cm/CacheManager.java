@@ -161,7 +161,7 @@ public final class CacheManager {
         String cacheImpl = System.getProperty(CACHE_IMPL_SYSPROP);
 
     	if(cacheImpl == null) {
-    	    this.wrappedImpl = new XIndiceAdvertisementCache(storeRoot, areaName, taskManager, gcinterval, trackDeltas);
+            this.wrappedImpl = new XIndiceAdvertisementCache(storeRoot, areaName, taskManager, gcinterval, trackDeltas);
     	} else {
             try {
                 Class<?> cacheClass = Class.forName(cacheImpl);
