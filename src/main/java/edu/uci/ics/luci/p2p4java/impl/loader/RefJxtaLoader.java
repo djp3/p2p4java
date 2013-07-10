@@ -103,7 +103,7 @@ import edu.uci.ics.luci.p2p4java.platform.JxtaLoader;
 import edu.uci.ics.luci.p2p4java.platform.Module;
 import edu.uci.ics.luci.p2p4java.platform.ModuleSpecID;
 import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
-import edu.uci.ics.luci.p2p4java.util.luci.P2p4Java;
+import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
 
 /**
  * This class is the reference implementation of the JxtaLoader.
@@ -645,7 +645,7 @@ public class RefJxtaLoader extends JxtaLoader {
 
         try {
 
-            List<String> providerList = P2p4Java.getResources("META-INF/services/"+edu.uci.ics.luci.p2p4java.platform.Module.class.getCanonicalName());
+            List<String> providerList = P2P4Java.getResources("META-INF/services/"+edu.uci.ics.luci.p2p4java.platform.Module.class.getCanonicalName());
 
             for (String provider : providerList) {
            		ModuleImplAdvertisement located = createModuleImplAdvertisement(msid, provider);
