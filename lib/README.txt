@@ -12,6 +12,7 @@ This is what is in this directory on a working distribution
 			4.0.0, but the interface changed sufficiently to make it work to
 			upgrade
 
+			I built it from source
             https://bitbucket.org/iainmcgin/netty-httptunnel/raw/tip/repo
 			httptunnel-1.0.jar
 
