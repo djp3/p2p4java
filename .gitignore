@@ -1,4 +1,5 @@
 target
+.cache
 
 # Libraries required but not included in the distribution
 lib/bcprov-ext-jdk15on-147.jar

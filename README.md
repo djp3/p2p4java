@@ -10,5 +10,11 @@ To use this for development:
 	* execute a Maven->Update Project from within Eclipse.
 	* then you should be compiling the project without errors
 
+If you are using Windows (and maybe other OS's), it is necessary to replace the Java Cryptography Policy Files on your machine with ones provided by Oracle in order to use stronger cryptography than what is natively allowed in Java.  Make sure you install the right version for the Java version you are using (e.g., 1.6)
+	This is where we got it:
+		http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html
+		
+
+
 For an example of this library being used check out:
 	https://github.com/djp3/p2pchat
