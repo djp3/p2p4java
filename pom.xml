@@ -153,7 +153,7 @@ http://luci.ics.uci.edu
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty</artifactId> <!-- Use 'netty-all' for 4.0 or above -->
-			<version>3.7.0.Final-SNAPSHOT</version>
+			<version>3.7.0.Final</version>
 			<scope>compile</scope>
 		</dependency>
         <!--
