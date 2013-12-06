@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public class P2P4Java {
+public class P2p4java {
 	
 	private static String runtime = System.getProperty("java.runtime.name");
 	

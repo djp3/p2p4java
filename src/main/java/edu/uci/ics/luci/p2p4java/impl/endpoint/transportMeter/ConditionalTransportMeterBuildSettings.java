@@ -59,7 +59,7 @@ package edu.uci.ics.luci.p2p4java.impl.endpoint.transportMeter;
 
 import java.util.ResourceBundle;
 
-import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4java;
 
 /**
  * This class is used to extract runtime transport metering code configuration.
@@ -75,14 +75,14 @@ public class ConditionalTransportMeterBuildSettings {
      * If this property is set to ON, the returned value will be {@code true}. Else, if the
      * property is not defined or if it has another value, this method will return {@false}.
      * 
-     * @return {@code true} if tranport metering code should be executed, else {@code false}
+     * @return {@code true} if transport metering code should be executed, else {@code false}
      */
     public static boolean isRuntimeMetering() {
 
         boolean runtimeMetering = false;
 
         try {
-                ResourceBundle userResourceBundle = P2P4Java.getBundle( "edu.uci.ics.luci.p2p4java.user" );
+                ResourceBundle userResourceBundle = P2p4java.getBundle( "edu.uci.ics.luci.p2p4java.user" );
                 String meteringProperty = "edu.uci.ics.luci.p2p4java.meter.conditionalTransportMetering";
                 String meteringValue = userResourceBundle.getString( meteringProperty );
                 runtimeMetering = "on".equalsIgnoreCase( meteringValue );

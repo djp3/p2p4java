@@ -63,10 +63,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -78,7 +76,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.uci.ics.luci.p2p4java.logging.Logging;
-import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4java;
 
 /**
  * This util class provides methods needed by class construction factories.
@@ -156,7 +154,7 @@ public abstract class ClassFactory<K, I> {
      *  property cannot be located.
      */
     protected boolean registerFromResources(String resourceName, String propertyName) throws MissingResourceException {
-        ResourceBundle jxtaRsrcs = P2P4Java.getBundle(resourceName);
+        ResourceBundle jxtaRsrcs = P2p4java.getBundle(resourceName);
         String fromProps = jxtaRsrcs.getString(propertyName).trim();
 
         return registerFromString(fromProps);
@@ -205,7 +203,7 @@ public abstract class ClassFactory<K, I> {
         boolean registeredSomething = false;
 
         try {
-            List<String> providers = P2P4Java.getResources("META-INF/services/" + interfaceName);
+            List<String> providers = P2p4java.getResources("META-INF/services/" + interfaceName);
 
             for(String provider: providers){
            		try{

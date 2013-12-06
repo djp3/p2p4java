@@ -68,10 +68,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -103,7 +100,7 @@ import edu.uci.ics.luci.p2p4java.platform.JxtaLoader;
 import edu.uci.ics.luci.p2p4java.platform.Module;
 import edu.uci.ics.luci.p2p4java.platform.ModuleSpecID;
 import edu.uci.ics.luci.p2p4java.protocol.ModuleImplAdvertisement;
-import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4java;
 
 /**
  * This class is the reference implementation of the JxtaLoader.
@@ -645,7 +642,7 @@ public class RefJxtaLoader extends JxtaLoader {
 
         try {
 
-            List<String> providerList = P2P4Java.getResources("META-INF/services/"+edu.uci.ics.luci.p2p4java.platform.Module.class.getCanonicalName());
+            List<String> providerList = P2p4java.getResources("META-INF/services/"+edu.uci.ics.luci.p2p4java.platform.Module.class.getCanonicalName());
 
             for (String provider : providerList) {
            		ModuleImplAdvertisement located = createModuleImplAdvertisement(msid, provider);

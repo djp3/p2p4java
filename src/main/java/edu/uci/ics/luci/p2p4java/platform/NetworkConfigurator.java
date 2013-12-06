@@ -107,7 +107,7 @@ import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
 import edu.uci.ics.luci.p2p4java.peergroup.PeerGroupID;
 import edu.uci.ics.luci.p2p4java.protocol.ConfigParams;
 import edu.uci.ics.luci.p2p4java.protocol.TransportAdvertisement;
-import edu.uci.ics.luci.p2p4java.util.luci.P2P4Java;
+import edu.uci.ics.luci.p2p4java.util.luci.P2p4java;
 
 /**
  * NetworkConfigurator provides a simple programmatic interface for JXTA configuration.
@@ -2006,7 +2006,7 @@ public class NetworkConfigurator {
         infraPeerGroupConfig = (PeerGroupConfigAdv) AdvertisementFactory.newAdvertisement(
                 PeerGroupConfigAdv.getAdvertisementType());
 
-        NetGroupTunables tunables = new NetGroupTunables(P2P4Java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
+        NetGroupTunables tunables = new NetGroupTunables(P2p4java.getBundle("edu.uci.ics.luci.p2p4java.impl.config"), new NetGroupTunables());
 
         infraPeerGroupConfig.setPeerGroupID(tunables.id);
         infraPeerGroupConfig.setName(tunables.name);
