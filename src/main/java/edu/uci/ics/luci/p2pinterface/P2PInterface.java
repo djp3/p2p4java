@@ -39,7 +39,6 @@ import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
 import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
 import edu.uci.ics.luci.p2p4java.util.CountingOutputStream;
 import edu.uci.ics.luci.p2p4java.util.DevNullOutputStream;
-import examples.RelayRendezvousServer;
 
 public class P2PInterface implements PipeMsgListener{
 	

@@ -1,4 +1,4 @@
-package examples;
+package edu.uci.ics.luci.p2p4java.examples;
 
 import java.io.File;
 import java.io.IOException;
