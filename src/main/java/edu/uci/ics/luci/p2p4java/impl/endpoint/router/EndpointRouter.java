@@ -96,6 +96,7 @@ import edu.uci.ics.luci.p2p4java.impl.endpoint.LoopbackMessenger;
 import edu.uci.ics.luci.p2p4java.impl.endpoint.TransportUtils;
 import edu.uci.ics.luci.p2p4java.impl.util.TimeUtils;
 import edu.uci.ics.luci.p2p4java.impl.util.threads.SelfCancellingTask;
+import edu.uci.ics.luci.p2p4java.impl.util.threads.TaskManager;
 import edu.uci.ics.luci.p2p4java.logging.Logging;
 import edu.uci.ics.luci.p2p4java.peer.PeerID;
 import edu.uci.ics.luci.p2p4java.peergroup.PeerGroup;
@@ -277,7 +278,13 @@ public class EndpointRouter implements EndpointListener, EndpointRoutingTranspor
             this.peerID = peerID;
             // We schedule for one tick at one minute and another at 5 minutes
             // after the second, we cancel ourselves.
-            setHandle(group.getTaskManager().getScheduledExecutorService().scheduleAtFixedRate(this, 60, 60 * 5, TimeUnit.SECONDS));
+            TaskManager tm = group.getTaskManager();
+            if(tm == null){
+            	//Probably shutting down
+            }
+            else{
+            	setHandle(tm.getScheduledExecutorService().scheduleAtFixedRate(this, 60, 60 * 5, TimeUnit.SECONDS));
+            }
             nextRouteResolveAt = TimeUtils.toAbsoluteTimeMillis(20L * TimeUtils.ASECOND);
         }
 

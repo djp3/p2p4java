@@ -162,9 +162,19 @@ public class TaskManager {
 			throw new IllegalStateException("Task manager is already shut down");
 		}
 		normalExecutor.shutdownShared();
+		
+		//djp3 - add the thread below to force a complete shutdown after 5 seconds
+		final ScheduledExecutorService w = Executors.newSingleThreadScheduledExecutor();
+		w.schedule(new Runnable(){
+			public void run() {
+				scheduledExecutor.shutdownSharedNow();
+				w.shutdown();
+			}
+		}, 5, TimeUnit.SECONDS);
 		scheduledExecutor.shutdownShared();
+		
 		monitoringExecutor.shutdownNow();
-                cachedExecutor.shutdownShared();
+        cachedExecutor.shutdownShared();
 		
 		synchronized (proxiedExecutors) {
 			for(String serviceName : proxiedExecutors.keySet()) {

@@ -290,11 +290,16 @@ public class RouteQuery  {
             e = adv.createElement(srcRouteTag);
             adv.appendChild(e);
             PSEMembershipService tempPSE = (PSEMembershipService)this.group.getMembershipService();
-            PSECredential tempCred = (PSECredential)tempPSE.getDefaultCredential();
-            route.sign(tempCred, true, true);
-            StructuredDocument xptDoc = (StructuredDocument) route.getSignedDocument();
+            if(tempPSE != null){
+            	PSECredential tempCred = (PSECredential)tempPSE.getDefaultCredential();
+            	route.sign(tempCred, true, true);
+            	StructuredDocument xptDoc = (StructuredDocument) route.getSignedDocument();
 
-            StructuredDocumentUtils.copyElements(adv, e, xptDoc);
+            	StructuredDocumentUtils.copyElements(adv, e, xptDoc);
+            }
+            else{
+            	//Probably shutting down
+            }
         }
 
         for (PeerID eachPeer : getBadHops()) {

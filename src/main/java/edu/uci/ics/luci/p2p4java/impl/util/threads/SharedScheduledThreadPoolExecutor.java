@@ -35,6 +35,13 @@ public class SharedScheduledThreadPoolExecutor extends ScheduledThreadPoolExecut
 		super.shutdown();
 	}
 	
+	/**
+	 *  Added by djp3 to force a shutdown for threads that were hanging around too long
+	 */
+	public void shutdownSharedNow() {
+		super.shutdownNow();
+	}
+	
 	@Override
 	public List<Runnable> shutdownNow() {
 		throw new IllegalStateException("shutdownNow cannot be called on a shared thread pool executor");

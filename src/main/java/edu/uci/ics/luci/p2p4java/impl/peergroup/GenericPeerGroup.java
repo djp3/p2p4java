@@ -1235,13 +1235,15 @@ public abstract class GenericPeerGroup implements PeerGroup {
 
         // remove everything (just in case);
         services.clear();
-
+        
         getGlobalRegistry().unRegisterInstance(peerGroupAdvertisement.getPeerGroupID(), this);
 
         // Explicitly unreference our parent group in order to allow it
         // to terminate if this group object was itself the last reference
         // to it.
         if (parentGroup != null) {
+        	//djp3 - added one below
+        	parentGroup.stopApp();
 //            parentGroup.unref();
             parentGroup = null;
         }
@@ -1681,8 +1683,14 @@ public abstract class GenericPeerGroup implements PeerGroup {
     }
 
     public TaskManager getTaskManager() {
-        return parentGroup.getTaskManager();
+    	if(parentGroup == null){
+    		//Probably shutting down
+    		return(null);
+    	}
+    	else{
+    		return parentGroup.getTaskManager();
         }
+    }
 
 //    @Deprecated
 //    public ThreadGroup getHomeThreadGroup() {
