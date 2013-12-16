@@ -10,3 +10,4 @@ lib/netty-3.6.6.Final-sources.jar
 lib/netty-3.6.6.Final.jar
 lib/iainmcgin-netty-httptunnel
 lib/httptunnel-1.0.jar
+lib/processing/*
