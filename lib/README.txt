@@ -20,5 +20,8 @@ This is what is in this directory on a working distribution
 		FindBugs (To make annotations compile)
 			annotations.jar
 			jsr305.jar
+
+		luci-utility.jar
+			A collection of utilities from the LUCI lab
 			
 	jars without a well described pedigree:

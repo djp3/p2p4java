@@ -4,6 +4,7 @@
 	<classpathentry exported="true" kind="lib" path="lib/httptunnel-1.0.jar" sourcepath="lib/iainmcgin-netty-httptunnel-60f8be5eca55/src"/>
 	<classpathentry exported="true" kind="lib" path="lib/annotations.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/jsr305.jar"/>
+	<classpathentry kind="lib" path="lib/luci-utility.jar"/>
 	<classpathentry kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
