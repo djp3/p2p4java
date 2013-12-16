@@ -1,3 +1,7 @@
+v0.1.6
+	Set up an interface that attempts to simplify as much as possible the
+	process of getting a P2P system up and communicating.
+
 v0.1.5
 	Got all the errors fixed so a client comes up cleanly.
 	
