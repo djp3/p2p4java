@@ -385,7 +385,7 @@ public final class RendezVousServiceImpl implements RendezVousService {
         msgIds.clear();
         eventListeners.clear();
 
-        Logging.logCheckedInfo(LOG, "Rendezvous Serivce stopped");
+        Logging.logCheckedInfo(LOG, "Rendezvous Service stopped");
 
     }
 

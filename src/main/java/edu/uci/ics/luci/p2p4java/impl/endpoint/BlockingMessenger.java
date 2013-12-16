@@ -847,7 +847,7 @@ public abstract class BlockingMessenger extends AbstractMessenger {
      *
      * @param message The message to send.
      * @param service The destination service.
-     * @param param   The destination serivce param.
+     * @param param   The destination service param.
      * @throws IOException Thrown for errors encountered while sending the message.
      */
     protected abstract void sendMessageBImpl(Message message, String service, String param) throws IOException;
