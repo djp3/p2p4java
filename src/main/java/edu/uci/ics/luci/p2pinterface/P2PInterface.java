@@ -75,7 +75,7 @@ public class P2PInterface implements PipeMsgListener{
     	}
     	Fetch f = new Fetch("https://raw.github.com");
     	try {
-    		JSONObject j = f.fetchJSONObject("/djp3/p2p4java/production/rendezvousNodeMasterList.json",false,null,30000);
+    		JSONObject j = f.fetchJSONObject("/djp3/p2p4java/production/bootstrapMasterList.json",false,null,30000);
     		JSONArray ja = (JSONArray) j.get("rendezvous_nodes");
 			for(int i=0;i < ja.size(); i++){
 				String s = (String) ja.get(i);
