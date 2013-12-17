@@ -23,5 +23,18 @@ This is what is in this directory on a working distribution
 
 		luci-utility.jar
 			A collection of utilities from the LUCI lab
+
+		Processing
+			These are all jars that are required to run the graphics intensive
+			examples
+			processing/*
+				controlP5.jar
+				core.jar
+				gluegen-rt-natives-macosx-universal.jar
+				gluegen-rt.jar
+				jogl-all-natives-macosx-universal.jar
+				jogl-all.jar
+
 			
 	jars without a well described pedigree:
+		json-smart-1.1.1.jar

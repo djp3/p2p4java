@@ -1,12 +1,15 @@
 target
 .cache
+*/.DS_Store
 
 # Libraries required but not included in the distribution
 lib/bcprov-ext-jdk15on-147.jar
 lib/annotations.jar
+lib/json-smart-1.1.1.jar
 lib/jsr305.jar
 lib/luci-utility.jar
 lib/netty-3.6.6.Final-sources.jar
 lib/netty-3.6.6.Final.jar
 lib/iainmcgin-netty-httptunnel
 lib/httptunnel-1.0.jar
+lib/processing/*
