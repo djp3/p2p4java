@@ -3,6 +3,7 @@ package edu.uci.ics.luci.p2pinterface;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -15,6 +16,9 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.TreeMap;
 
+import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+
 import org.apache.log4j.Logger;
 
 import edu.uci.ics.luci.p2p4java.document.AdvertisementFactory;
@@ -25,6 +29,7 @@ import edu.uci.ics.luci.p2p4java.endpoint.Message.ElementIterator;
 import edu.uci.ics.luci.p2p4java.endpoint.MessageElement;
 import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessage;
 import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessageFactory;
+import edu.uci.ics.luci.p2p4java.examples.RelayRendezvousServer;
 import edu.uci.ics.luci.p2p4java.id.IDFactory;
 import edu.uci.ics.luci.p2p4java.pipe.InputPipe;
 import edu.uci.ics.luci.p2p4java.pipe.OutputPipe;
@@ -39,6 +44,7 @@ import edu.uci.ics.luci.p2p4java.platform.NetworkManager;
 import edu.uci.ics.luci.p2p4java.protocol.PipeAdvertisement;
 import edu.uci.ics.luci.p2p4java.util.CountingOutputStream;
 import edu.uci.ics.luci.p2p4java.util.DevNullOutputStream;
+import edu.uci.ics.luci.utility.webclient.Fetch;
 
 public class P2PInterface implements PipeMsgListener{
 	
@@ -67,6 +73,27 @@ public class P2PInterface implements PipeMsgListener{
     	if(rendezvous == null){
     		rendezvous = new HashSet<URI>();
     	}
+    	Fetch f = new Fetch("https://raw.github.com");
+    	try {
+    		JSONObject j = f.fetchJSONObject("/djp3/p2p4java/production/rendezvousNodeMasterList.json",false,null,30000);
+    		JSONArray ja = (JSONArray) j.get("rendezvous_nodes");
+			for(int i=0;i < ja.size(); i++){
+				String s = (String) ja.get(i);
+				URI r = URI.create(s);
+				rendezvous.add(r);
+			}
+    		ja = (JSONArray) j.get("relay_nodes");
+			for(int i=0;i < ja.size(); i++){
+				String s = (String) ja.get(i);
+				URI r = URI.create(s);
+				relay.add(r);
+			}
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	
     	URI r = URI.create(RelayRendezvousServer.SUPER_URI);
     	relay.add(r);
     	rendezvous.add(r);

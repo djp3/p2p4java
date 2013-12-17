@@ -37,3 +37,4 @@ This is what is in this directory on a working distribution
 
 			
 	jars without a well described pedigree:
+		json-smart-1.1.1.jar
