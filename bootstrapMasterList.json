@@ -1,4 +1,4 @@
 {
-	"rendezvous_nodes":["tcp://173.255.208.77:9701"]
+	"rendezvous_nodes":["tcp://173.255.208.77:9701"],
 	"relay_nodes":["tcp://173.255.208.77:9701"]
 }
