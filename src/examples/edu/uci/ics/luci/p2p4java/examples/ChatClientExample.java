@@ -29,6 +29,7 @@ public class ChatClientExample extends PApplet implements P2PSink {
 	ControlP5 cp5;
 
 	PFont pfont;
+	private Textlabel myTextlabelA;
 	
 	public void setup() {
 		size(800,200,P2D);
@@ -38,8 +39,22 @@ public class ChatClientExample extends PApplet implements P2PSink {
 		
 		//pfont = loadFont("/Users/djp3/Development/Mac/EclipseWorkspaceCacophony/p2p4java/lib/processing/Helvetica-48.vlw");
 		pfont = loadFont("data/Helvetica-48.vlw");
+		ControlFont cfont = new ControlFont(pfont,24);
 		
 		cp5 = new ControlP5(this);
+		myTextlabelA = cp5.addTextlabel("label")
+                .setText("Username:")
+                .setPosition(10,10)
+                .setFont(cfont)
+                ;
+		
+		cp5.addTextfield("Username")
+	     .setPosition(10,40)
+	     .setSize(200,40)
+	     .setFont(cfont)
+	     .setFocus(true)
+	     .setColor(color(255,0,0))
+	     ;
 
 	}
 

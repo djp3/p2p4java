@@ -29,7 +29,6 @@ import edu.uci.ics.luci.p2p4java.endpoint.Message.ElementIterator;
 import edu.uci.ics.luci.p2p4java.endpoint.MessageElement;
 import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessage;
 import edu.uci.ics.luci.p2p4java.endpoint.WireFormatMessageFactory;
-import edu.uci.ics.luci.p2p4java.examples.RelayRendezvousServer;
 import edu.uci.ics.luci.p2p4java.id.IDFactory;
 import edu.uci.ics.luci.p2p4java.pipe.InputPipe;
 import edu.uci.ics.luci.p2p4java.pipe.OutputPipe;
@@ -94,10 +93,13 @@ public class P2PInterface implements PipeMsgListener{
 			e.printStackTrace();
 		}
     	
-    	URI r = URI.create(RelayRendezvousServer.SUPER_URI);
-    	relay.add(r);
-    	rendezvous.add(r);
-    	
+    	/* If the bootstrap list fails, try a hardcoded server */
+    	if(relay.size() == 0){
+    		relay.add(URI.create("tcp://173.255.208.77:9701"));
+    	}
+    	if(rendezvous.size() == 0){
+    		rendezvous.add(URI.create("tcp://173.255.208.77:9701"));
+    	}
     }
     
 	
