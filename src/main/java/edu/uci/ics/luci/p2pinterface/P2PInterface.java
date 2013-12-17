@@ -120,14 +120,14 @@ public class P2PInterface implements PipeMsgListener{
 	}
 
 
-	private NetworkManager setupLocalNetworkManager(String urn)
+	private NetworkManager setupLocalNetworkManager(String nodename)
 			throws IOException {
 		File file = new File(".cache");
-		File file2 = new File(file, urn);
+		File file2 = new File(file, nodename);
 		URI uri = file2.toURI();
 	
 		NetworkManager localManager = null;
-		localManager = new NetworkManager(NetworkManager.ConfigMode.EDGE, urn,uri);
+		localManager = new NetworkManager(NetworkManager.ConfigMode.EDGE, nodename,uri);
 		return localManager;
 	}
 
@@ -185,7 +185,7 @@ public class P2PInterface implements PipeMsgListener{
 			
 			String urn = create_p2p_urn(nodename);
 			
-			NetworkManager localNetworkManager = setupLocalNetworkManager(urn);
+			NetworkManager localNetworkManager = setupLocalNetworkManager(nodename);
 			
 			NetworkConfigurator configurator = null;
 			configurator = localNetworkManager.getConfigurator();
