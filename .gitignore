@@ -2,6 +2,9 @@ target
 .cache
 */.DS_Store
 
+#This should be developer specific, no?
+*.classpath
+
 # Libraries required but not included in the distribution
 lib/bcprov-ext-jdk15on-147.jar
 lib/annotations.jar

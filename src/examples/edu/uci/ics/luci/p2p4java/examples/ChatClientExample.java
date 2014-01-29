@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 
 import controlP5.ControlFont;
 import controlP5.ControlP5;
+import controlP5.Textfield;
 import controlP5.Textlabel;
 
 import edu.uci.ics.luci.p2pinterface.P2PInterface;
@@ -30,6 +31,7 @@ public class ChatClientExample extends PApplet implements P2PSink {
 
 	PFont pfont;
 	private Textlabel myTextlabelA;
+	private boolean  started = false;
 	
 	public void setup() {
 		size(800,200,P2D);
@@ -42,29 +44,54 @@ public class ChatClientExample extends PApplet implements P2PSink {
 		ControlFont cfont = new ControlFont(pfont,24);
 		
 		cp5 = new ControlP5(this);
-		myTextlabelA = cp5.addTextlabel("label")
-                .setText("Username:")
-                .setPosition(10,10)
-                .setFont(cfont)
-                ;
 		
 		cp5.addTextfield("Username")
 	     .setPosition(10,40)
 	     .setSize(200,40)
 	     .setFont(cfont)
 	     .setFocus(true)
-	     .setColor(color(255,0,0))
+	     .setColor(color(255,255,255))
+	     ;
+		
+		cp5.addTextfield("Message")
+	     .setPosition(10,100)
+	     .setSize(200,40)
+	     .setFont(cfont)
+	     .setFocus(true)
+	     .setColor(color(255,255,255))
+	     ;
+		
+		cp5.addButton("sendIt")
+	     .setValue(1)
+	     .setPosition(10,170)
+	     .setSize(200,19)
 	     ;
 
+	}
+	
+	public void sendIt(int theValue) {
+		if(started && (theValue == 1)){
+			String nodeName = cp5.get(Textfield.class,"Username").getText();
+			String message = cp5.get(Textfield.class,"Message").getText();
+		
+			ChatClientExample sss = new ChatClientExample();
+		
+			P2PInterface p2p = new P2PInterface(nodeName,sss);
+			p2p.start();
+			p2p.sendMessage("SinkServerSimple", message);
+		
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+			}
+		
+			p2p.stop();
+		}
 	}
 
 	public void draw() {
 		smooth();
-		textFont(pfont);
-		text("word", 101, 101);
-		if (mousePressed) {
-			line(mouseX,mouseY,pmouseX,pmouseY);
-		}
+		started  = true;
 	}
 
 	/**
@@ -142,11 +169,11 @@ public class ChatClientExample extends PApplet implements P2PSink {
 	}*/
 
 	public static void main(String[] args) {
-		String nodeName = "SinkServerSimple";
+		//String nodeName = "SinkServerSimple";
 		
-		ChatClientExample sss = new ChatClientExample();
+		//ChatClientExample sss = new ChatClientExample();
 		
-		P2PInterface p2p = null;
+		//P2PInterface p2p = null;
 		//P2PInterface p2p = new P2PInterface(nodeName,sss);
 		
 		//launchWindows(p2p);

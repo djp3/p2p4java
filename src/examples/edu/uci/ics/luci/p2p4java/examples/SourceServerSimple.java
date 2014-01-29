@@ -22,6 +22,12 @@ public class SourceServerSimple implements P2PSink{
 		
 		p2p.sendMessage("SinkServerSimple", "Hello World");
 		
+		/* Give the message a chance to go out */
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+		}
+		
 		p2p.stop();
 	}
 }

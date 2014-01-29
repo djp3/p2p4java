@@ -63,6 +63,9 @@ public class P2PInterface implements PipeMsgListener{
     private InputPipe inputPipe = null;
     
     private P2PSink sink = null;
+
+    private Object isRunningLock = new Object();
+	private boolean isRunning = false;;
     
     void fetchBootstrapList(Set<URI> relay,Set<URI>rendezvous){
     	
@@ -289,24 +292,28 @@ public class P2PInterface implements PipeMsgListener{
      */
     public void start() {
     	
-   		getLog().debug("Waiting for Rendezvous Connection");
-   		manager.waitForRendezvousConnection(0);
-   		getLog().debug("Connected to Rendezvous");
+    	synchronized(isRunningLock){
+    		getLog().debug("Waiting for Rendezvous Connection");
+    		manager.waitForRendezvousConnection(0);
+    		getLog().debug("Connected to Rendezvous");
 
-        try {
-        	getLog().debug("Creating receiving pipe");
-            // Create the InputPipe and register this for message arrival
-            // notification call-back
-            inputPipe = pipeService.createInputPipe(pipeAdv, this);
-        } catch (IOException io) {
-            getLog().warn(io.toString());
-            return;
-        }
-        if (inputPipe == null) {
-        	getLog().fatal("Can't open receiving pipe");
-        	throw new RuntimeException("Can't open receiving pipe");
-        }
-        getLog().debug("Waiting for msgs on input pipe");
+    		try {
+    			getLog().debug("Creating receiving pipe");
+    			// Create the InputPipe and register this for message arrival
+    			// notification call-back
+    			inputPipe = pipeService.createInputPipe(pipeAdv, this);
+    		} catch (IOException io) {
+    			getLog().warn(io.toString());
+    			return;
+    		}	
+    		if (inputPipe == null) {
+    			getLog().fatal("Can't open receiving pipe");
+    			throw new RuntimeException("Can't open receiving pipe");
+    		}
+    		getLog().debug("Waiting for msgs on input pipe");
+    		
+    		this.isRunning = true;
+    	}
         
     }
     
@@ -314,29 +321,36 @@ public class P2PInterface implements PipeMsgListener{
      * Closes the output pipe and stops the platform
      */
     public void stop() {
+    	synchronized(isRunningLock){
+    		this.isRunning = false;
     	
-    	pipeAdv = null;
+    		pipeAdv = null;
     	
-        // Close the input pipe
-    	if(inputPipe != null){
-    		inputPipe.close();
-    		inputPipe = null;
+    		// Close the input pipe
+    		if(inputPipe != null){
+   	    		inputPipe.close();
+   	    		inputPipe = null;
+    		}
+        
+    		synchronized(outputPipes){
+    			Set<String> m = outputPipes.keySet();
+    			for(String s:m){
+    				OutputPipe op = outputPipes.remove(s);
+    				if(op != null){
+    					op.close();
+    				}
+    			}
+    			outputPipes.clear();
+    		}
+        
+    		// Stop JXTA
+    		manager.stopNetwork();
     	}
-        
-        synchronized(outputPipes){
-        	Set<String> m = outputPipes.keySet();
-        	for(String s:m){
-        		OutputPipe op = outputPipes.remove(s);
-        		if(op != null){
-        			op.close();
-        		}
-        	}
-        	outputPipes.clear();
-        }
-        
-        // Stop JXTA
-        manager.stopNetwork();
-        
+    }
+    
+    
+    public boolean isRunning(){
+    	return this.isRunning;
     }
     
     
@@ -361,7 +375,6 @@ public class P2PInterface implements PipeMsgListener{
             while (it.hasNext()) {
                 MessageElement el = it.next();
                 
-            	StringBuffer sb = new StringBuffer();
                 String eName = el.getElementName();
 
                 cnt = new CountingOutputStream(new DevNullOutputStream());
