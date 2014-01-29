@@ -5,6 +5,9 @@ target
 #This should be developer specific, no?
 *.classpath
 
+#generated files
+p2p4java.jar
+
 # Libraries required but not included in the distribution
 lib/bcprov-ext-jdk15on-147.jar
 lib/annotations.jar

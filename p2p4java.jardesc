@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="p2p4java/p2p4java.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/p2p4java/p2p4java.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/p2p4java/p2p4java.manifest" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+        <sealing sealJar="true">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/p2p4java/RELEASE_NOTES"/>
+        <file path="/p2p4java/.project"/>
+        <folder path="/p2p4java/src"/>
+        <folder path="/p2p4java/lib"/>
+        <file path="/p2p4java/bootstrapMasterList.json"/>
+        <file path="/p2p4java/.classpath"/>
+        <javaElement handleIdentifier="=p2p4java/src\/examples"/>
+        <file path="/p2p4java/pom.xml"/>
+        <javaElement handleIdentifier="=p2p4java/src\/test\/resources"/>
+        <javaElement handleIdentifier="=p2p4java/src\/main\/resources"/>
+        <javaElement handleIdentifier="=p2p4java/src\/main\/java"/>
+        <folder path="/p2p4java/target"/>
+        <file path="/p2p4java/.gitignore"/>
+        <file path="/p2p4java/README.md"/>
+        <javaElement handleIdentifier="=p2p4java/src\/test\/java"/>
+    </selectedElements>
+</jardesc>
