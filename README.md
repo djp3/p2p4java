@@ -4,8 +4,12 @@ p2p4java
 An independent port of the JXSE/JXTA v2.7 peer-to-peer communication library.  It has been forked so that it can be modified to work on the Android platform in addition to general java platforms. Developed by the LUCI lab at the University of California, Irvine. http://luci.ics.uci.edu
 
 To use this for development:
+	* set up Eclipse to use Java 1.6
 	* make sure your Eclipse has m2e, the maven plug-in for Eclipse installed
+	* build the luci-utility project
+	** https://github.com/djp3/luci-utility
 	* import p2p4java into into Eclipse
+	** https://github.com/djp3/p2p4java
 	* get the additional libraries required and put them in the /lib folder.  There is a README file there with more information.
 	* execute a Maven->Update Project from within Eclipse.
 	* then you should be compiling the project without errors
@@ -14,7 +18,6 @@ If you are using Windows (and maybe other OS's), it is necessary to replace the 
 	This is where we got it:
 		http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html
 		
-
 
 For an example of this library being used check out:
 	https://github.com/djp3/p2pchat
