@@ -3,10 +3,12 @@ target
 */.DS_Store
 
 #This should be developer specific, no?
-*.classpath
+.classpath
+.project
 
 #generated files
 p2p4java.jar
+.jxta
 
 # Libraries required but not included in the distribution
 lib/bcprov-ext-jdk15on-147.jar
