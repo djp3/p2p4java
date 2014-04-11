@@ -10,7 +10,9 @@ public class RelayRendezvousServer {
 
 	//public final static String SUPER_URI = "tcp://128.195.59.254:9701";
 	//public final static String SUPER_URI = "tcp://173.255.208.77:9701";
-	public final static String SUPER_URI = "tcp://128.195.10.227:9701";
+	//public final static String SUPER_URI = "tcp://128.195.10.227:9701";
+	public final static String SUPER_URI = "tcp://128.195.10.226:9701"; //djp3-pc8
+
 
     transient NetworkManager manager = null;
 

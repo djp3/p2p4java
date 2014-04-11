@@ -17,6 +17,8 @@ To use this for development:
 If you are using Windows (and maybe other OS's), it is necessary to replace the Java Cryptography Policy Files on your machine with ones provided by Oracle in order to use stronger cryptography than what is natively allowed in Java.  Make sure you install the right version for the Java version you are using (e.g., 1.6)
 	This is where we got it:
 		http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html
+
+	On Ubuntu Linux 12.04, installing openjdk-7-jre-headless automatically installed the unlimited encryption policy files.
 		
 
 For an example of this library being used check out:
