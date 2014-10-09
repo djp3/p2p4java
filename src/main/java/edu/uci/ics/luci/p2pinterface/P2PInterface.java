@@ -98,10 +98,10 @@ public class P2PInterface implements PipeMsgListener{
     	
     	/* If the bootstrap list fails, try a hardcoded server */
     	if(relay.size() == 0){
-    		relay.add(URI.create("tcp://173.255.208.77:9701"));
+    		relay.add(URI.create("tcp://128.195.10.226:9701"));
     	}
     	if(rendezvous.size() == 0){
-    		rendezvous.add(URI.create("tcp://173.255.208.77:9701"));
+    		rendezvous.add(URI.create("tcp://128.195.10.226:9701"));
     	}
     }
     
