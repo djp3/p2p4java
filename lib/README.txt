@@ -17,12 +17,8 @@ This is what is in this directory on a working distribution
 			httptunnel-1.0.jar
 
 
-		FindBugs (To make annotations compile)
-			annotations.jar
-			jsr305.jar
-
 		luci-utility.jar
-			A collection of utilities from the LUCI lab
+			A collection of utilities from the LUCI lab project
 
 		Processing
 			These are all jars that are required to run the graphics intensive
@@ -37,4 +33,6 @@ This is what is in this directory on a working distribution
 
 			
 	jars without a well described pedigree:
-		json-smart-1.1.1.jar
+
+	maven dependencies (see pom.xml):
+
