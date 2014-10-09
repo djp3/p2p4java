@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.uci.ics.luci.p2p4java</groupId>
 	<artifactId>p2p4java</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.1.8-SNAPSHOT</version>
 
 	<name>p2p4java</name>
     <organization>
@@ -156,6 +156,11 @@ http://luci.ics.uci.edu
 			<version>3.7.0.Final</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>net.minidev</groupId>
+			<artifactId>json-smart</artifactId>
+			<version>1.2</version>
+		</dependency>
         <!--
               The following dependencies are not always needed in normal
 			  p2p4java use,
@@ -163,6 +168,11 @@ http://luci.ics.uci.edu
               project's pom.xml if you want to use the parts of p2p4java that depend on
               them.
           -->
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>annotations</artifactId>
+			<version>3.0.0</version>
+		</dependency>
         <dependency>
             <groupId>jetty</groupId>
             <artifactId>org.mortbay.jetty</artifactId>
