@@ -11,20 +11,20 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
-        <file path="/p2p4java/RELEASE_NOTES"/>
-        <file path="/p2p4java/.project"/>
+        <folder path="/p2p4java/target"/>
+        <file path="/p2p4java/README.md"/>
         <folder path="/p2p4java/src"/>
-        <folder path="/p2p4java/lib"/>
-        <file path="/p2p4java/bootstrapMasterList.json"/>
-        <file path="/p2p4java/.classpath"/>
         <javaElement handleIdentifier="=p2p4java/src\/examples"/>
-        <file path="/p2p4java/pom.xml"/>
-        <javaElement handleIdentifier="=p2p4java/src\/test\/resources"/>
+        <file path="/p2p4java/RELEASE_NOTES"/>
         <javaElement handleIdentifier="=p2p4java/src\/main\/resources"/>
         <javaElement handleIdentifier="=p2p4java/src\/main\/java"/>
-        <folder path="/p2p4java/target"/>
-        <file path="/p2p4java/.gitignore"/>
-        <file path="/p2p4java/README.md"/>
         <javaElement handleIdentifier="=p2p4java/src\/test\/java"/>
+        <file path="/p2p4java/bootstrapMasterList.json"/>
+        <file path="/p2p4java/.project"/>
+        <file path="/p2p4java/pom.xml"/>
+        <file path="/p2p4java/.classpath"/>
+        <folder path="/p2p4java/lib"/>
+        <javaElement handleIdentifier="=p2p4java/src\/test\/resources"/>
+        <file path="/p2p4java/.gitignore"/>
     </selectedElements>
 </jardesc>
